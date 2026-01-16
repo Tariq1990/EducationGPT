@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+tabpfn
+fastapi
+uvicorn
+streamlit
+python-calamine
+plotly
+httpx
+google-generativeai
+python-dotenv
