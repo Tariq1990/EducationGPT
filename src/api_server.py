@@ -8,14 +8,18 @@ import uvicorn
 app = FastAPI(title="School Resource Shortage API")
 
 # Load model and preprocessors
-MODEL_PATH = r"c:\Users\Engr.Tariq Jamal\Downloads\EMA_ML_model\school_model.pkl"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.getenv(
+    "MODEL_PATH",
+    os.path.normpath(os.path.join(BASE_DIR, "..", "models", "school_model.pkl"))
+)
 
 if os.path.exists(MODEL_PATH):
     with open(MODEL_PATH, 'rb') as f:
         model_data = pickle.load(f)
 else:
     model_data = None
-    print("Warning: school_model.pkl not found. Please run train_model.py first.")
+    print("Warning: school_model.pkl not found. Please run src/train_model.py first.")
 
 class SchoolData(BaseModel):
     Gender: str
@@ -85,13 +89,15 @@ def predict_shortage(data: SchoolData):
     X_input[model_data['numerical_cols']] = model_data['imputer'].transform(X_input[model_data['numerical_cols']])
 
     # Predict
-    prediction = model_data['model'].predict(X_input)[0]
     probability = model_data['model'].predict_proba(X_input)[0].tolist()
+    threshold = model_data.get('decision_threshold', 0.5)
+    prediction = int(probability[1] >= threshold)
 
     return {
         "is_critical": int(prediction),
         "status": "Critical" if prediction == 1 else "Normal",
-        "probability": probability
+        "probability": probability,
+        "threshold": threshold
     }
 
 if __name__ == "__main__":

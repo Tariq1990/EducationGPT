@@ -107,7 +107,11 @@ def preprocess_features(df):
         return df[features]
 
 if __name__ == "__main__":
-    DATA_DIR = r"c:\Users\Engr.Tariq Jamal\Downloads\EMA_ML_model"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_DIR = os.getenv(
+        "DATA_DIR",
+        os.path.normpath(os.path.join(BASE_DIR, "..", "data", "raw"))
+    )
     df = load_and_merge_data(DATA_DIR)
     print(f"Final Data Shape: {df.shape}")
     print(f"Critical Schools: {df['is_critical'].sum()} out of {len(df)}")
@@ -116,5 +120,7 @@ if __name__ == "__main__":
     print("Features selected.")
     
     # Save processed data for training
-    df.to_csv(os.path.join(DATA_DIR, 'processed_school_data.csv'), index=False)
-    print("Saved to processed_school_data.csv")
+    out_path = os.path.normpath(os.path.join(BASE_DIR, "..", "data", "processed", "processed_school_data.csv"))
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    df.to_csv(out_path, index=False)
+    print(f"Saved to {out_path}")

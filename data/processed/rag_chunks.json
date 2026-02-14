@@ -1,0 +1,1542 @@
+[
+  {
+    "id": "dataset-overview",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "Dataset overview. Total schools: 646. Critical schools: 613. Average teachers per school: 3.11."
+  },
+  {
+    "id": "district-MOHMAND",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "District summary for MOHMAND. Schools: 646. Critical: 613. Average teachers: 3.11."
+  },
+  {
+    "id": "profile-0",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Higher Secondary. total_teachers: 26.0. No of Pakka Class Rooms: 16. Presentbalance: 1502.0. is_critical: 1."
+  },
+  {
+    "id": "profile-1",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Higher Secondary. total_teachers: 16.0. No of Pakka Class Rooms: 10. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-2",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-3",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 13.0. No of Pakka Class Rooms: 6. Presentbalance: 201499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-4",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 15.0. No of Pakka Class Rooms: 8. Presentbalance: 999.0. is_critical: 1."
+  },
+  {
+    "id": "profile-5",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 6. Presentbalance: 61738.0. is_critical: 1."
+  },
+  {
+    "id": "profile-6",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 7. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-7",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 10.0. No of Pakka Class Rooms: 0. Presentbalance: 9751.0. is_critical: 1."
+  },
+  {
+    "id": "profile-8",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 14.0. No of Pakka Class Rooms: 8. Presentbalance: 3500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-9",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 10.0. No of Pakka Class Rooms: 4. Presentbalance: 799.0. is_critical: 1."
+  },
+  {
+    "id": "profile-10",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 5. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-11",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 9.0. No of Pakka Class Rooms: 11. Presentbalance: 205766.0. is_critical: 1."
+  },
+  {
+    "id": "profile-12",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 14.0. No of Pakka Class Rooms: 9. Presentbalance: 13029.0. is_critical: 1."
+  },
+  {
+    "id": "profile-13",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 27.0. No of Pakka Class Rooms: 10. Presentbalance: 1468601.0. is_critical: 1."
+  },
+  {
+    "id": "profile-14",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 10.0. No of Pakka Class Rooms: 10. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-15",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 6. Presentbalance: 51563.0. is_critical: 0."
+  },
+  {
+    "id": "profile-16",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 21.0. No of Pakka Class Rooms: 7. Presentbalance: 40082.0. is_critical: 1."
+  },
+  {
+    "id": "profile-17",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 13.0. No of Pakka Class Rooms: 8. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-18",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Higher Secondary. total_teachers: 24.0. No of Pakka Class Rooms: 23. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-19",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 7. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-20",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 5. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-21",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 15.0. No of Pakka Class Rooms: 12. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-22",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 17.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-23",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 3.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-24",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-25",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 7.0. No of Pakka Class Rooms: 6. Presentbalance: 8107.0. is_critical: 0."
+  },
+  {
+    "id": "profile-26",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 6. Presentbalance: 429.0. is_critical: 1."
+  },
+  {
+    "id": "profile-27",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 9. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-28",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 7. Presentbalance: 2828.0. is_critical: 1."
+  },
+  {
+    "id": "profile-29",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 3. Presentbalance: 161279.0. is_critical: 0."
+  },
+  {
+    "id": "profile-30",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 15500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-31",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 8.0. No of Pakka Class Rooms: 8. Presentbalance: 13559.0. is_critical: 1."
+  },
+  {
+    "id": "profile-32",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 3. Presentbalance: 232823.0. is_critical: 1."
+  },
+  {
+    "id": "profile-33",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 9.0. No of Pakka Class Rooms: 6. Presentbalance: 874.0. is_critical: 1."
+  },
+  {
+    "id": "profile-34",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-35",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-36",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 9.0. No of Pakka Class Rooms: 12. Presentbalance: 89183.0. is_critical: 1."
+  },
+  {
+    "id": "profile-37",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-38",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 20.0. is_critical: 1."
+  },
+  {
+    "id": "profile-39",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 5. Presentbalance: 509.0. is_critical: 1."
+  },
+  {
+    "id": "profile-40",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 10. Presentbalance: 1114.0. is_critical: 1."
+  },
+  {
+    "id": "profile-41",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 4. Presentbalance: 22359.0. is_critical: 0."
+  },
+  {
+    "id": "profile-42",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 6. Presentbalance: 2278.0. is_critical: 1."
+  },
+  {
+    "id": "profile-43",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 13.0. No of Pakka Class Rooms: 9. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-44",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 4. Presentbalance: 45.0. is_critical: 1."
+  },
+  {
+    "id": "profile-45",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-46",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 2409.0. is_critical: 0."
+  },
+  {
+    "id": "profile-47",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-48",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-49",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 7.0. No of Pakka Class Rooms: 5. Presentbalance: 1000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-50",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 13.0. No of Pakka Class Rooms: 5. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-51",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 19563.0. is_critical: 1."
+  },
+  {
+    "id": "profile-52",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 20.0. is_critical: 1."
+  },
+  {
+    "id": "profile-53",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 1.0. No of Pakka Class Rooms: 10. Presentbalance: 82000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-54",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 3. Presentbalance: 1500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-55",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 8.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-56",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 7.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-57",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 9.0. No of Pakka Class Rooms: 7. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-58",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 4.0. No of Pakka Class Rooms: 9. Presentbalance: 4499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-59",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-60",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 8. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-61",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 12.0. No of Pakka Class Rooms: 5. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-62",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-63",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 7.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-64",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-65",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 4. Presentbalance: 5000.0. is_critical: 0."
+  },
+  {
+    "id": "profile-66",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-67",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: High. total_teachers: 10.0. No of Pakka Class Rooms: 14. Presentbalance: 106000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-68",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 11000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-69",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 6. Presentbalance: 58088.0. is_critical: 0."
+  },
+  {
+    "id": "profile-70",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 5.0. No of Pakka Class Rooms: 4. Presentbalance: 1173.0. is_critical: 1."
+  },
+  {
+    "id": "profile-71",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-72",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 8.0. No of Pakka Class Rooms: 4. Presentbalance: 40178.0. is_critical: 1."
+  },
+  {
+    "id": "profile-73",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-74",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 7285.0. is_critical: 0."
+  },
+  {
+    "id": "profile-75",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 3. Presentbalance: 1535.0. is_critical: 0."
+  },
+  {
+    "id": "profile-76",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 4. Presentbalance: 1499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-77",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 23827.0. is_critical: 1."
+  },
+  {
+    "id": "profile-78",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 99.0. is_critical: 1."
+  },
+  {
+    "id": "profile-79",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 99.0. is_critical: 1."
+  },
+  {
+    "id": "profile-80",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 13042.0. is_critical: 1."
+  },
+  {
+    "id": "profile-81",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 179257.0. is_critical: 1."
+  },
+  {
+    "id": "profile-82",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 1037.0. is_critical: 1."
+  },
+  {
+    "id": "profile-83",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 433.0. is_critical: 1."
+  },
+  {
+    "id": "profile-84",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 540.0. is_critical: 1."
+  },
+  {
+    "id": "profile-85",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2188.0. is_critical: 1."
+  },
+  {
+    "id": "profile-86",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 9000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-87",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 8419.0. is_critical: 1."
+  },
+  {
+    "id": "profile-88",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 0. Presentbalance: 937.0. is_critical: 1."
+  },
+  {
+    "id": "profile-89",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 3307.0. is_critical: 1."
+  },
+  {
+    "id": "profile-90",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 1374798.0. is_critical: 1."
+  },
+  {
+    "id": "profile-91",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 475.0. is_critical: 1."
+  },
+  {
+    "id": "profile-92",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 6. Presentbalance: 1000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-93",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 1249.0. is_critical: 1."
+  },
+  {
+    "id": "profile-94",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-95",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 200499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-96",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 94135.0. is_critical: 1."
+  },
+  {
+    "id": "profile-97",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-98",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 87285.0. is_critical: 1."
+  },
+  {
+    "id": "profile-99",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 74117.0. is_critical: 1."
+  },
+  {
+    "id": "profile-100",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-101",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-102",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 399.0. is_critical: 1."
+  },
+  {
+    "id": "profile-103",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 1502.0. is_critical: 1."
+  },
+  {
+    "id": "profile-104",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 0. Presentbalance: 99.0. is_critical: 1."
+  },
+  {
+    "id": "profile-105",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 5733.0. is_critical: 1."
+  },
+  {
+    "id": "profile-106",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 988.0. is_critical: 1."
+  },
+  {
+    "id": "profile-107",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 4. Presentbalance: 328000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-108",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-109",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-110",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 5. Presentbalance: 40000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-111",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-112",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 239000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-113",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 200500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-114",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-115",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 15000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-116",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 200000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-117",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 11500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-118",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 22500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-119",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 0. Presentbalance: 22000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-120",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 2192.0. is_critical: 0."
+  },
+  {
+    "id": "profile-121",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-122",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-123",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 11397.0. is_critical: 1."
+  },
+  {
+    "id": "profile-124",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 1350.0. is_critical: 1."
+  },
+  {
+    "id": "profile-125",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 6. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-126",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 1197.0. is_critical: 1."
+  },
+  {
+    "id": "profile-127",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 12000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-128",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-129",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-130",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 1315.0. is_critical: 1."
+  },
+  {
+    "id": "profile-131",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-132",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 0. Presentbalance: 13145.0. is_critical: 1."
+  },
+  {
+    "id": "profile-133",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-134",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 6308.0. is_critical: 1."
+  },
+  {
+    "id": "profile-135",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 3034.0. is_critical: 1."
+  },
+  {
+    "id": "profile-136",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 7030.0. is_critical: 0."
+  },
+  {
+    "id": "profile-137",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 31617.0. is_critical: 1."
+  },
+  {
+    "id": "profile-138",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 1189.0. is_critical: 1."
+  },
+  {
+    "id": "profile-139",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 7. Presentbalance: 285104.0. is_critical: 1."
+  },
+  {
+    "id": "profile-140",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 11.0. No of Pakka Class Rooms: 10. Presentbalance: 3418.0. is_critical: 1."
+  },
+  {
+    "id": "profile-141",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 4. Presentbalance: 883.0. is_critical: 1."
+  },
+  {
+    "id": "profile-142",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 619.0. is_critical: 1."
+  },
+  {
+    "id": "profile-143",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 427340.0. is_critical: 1."
+  },
+  {
+    "id": "profile-144",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2197.0. is_critical: 1."
+  },
+  {
+    "id": "profile-145",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-146",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-147",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 5. Presentbalance: 6179.0. is_critical: 1."
+  },
+  {
+    "id": "profile-148",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2037491.0. is_critical: 0."
+  },
+  {
+    "id": "profile-149",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 4359.0. is_critical: 1."
+  },
+  {
+    "id": "profile-150",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 26480.0. is_critical: 1."
+  },
+  {
+    "id": "profile-151",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-152",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 72030.0. is_critical: 1."
+  },
+  {
+    "id": "profile-153",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 2596.0. is_critical: 1."
+  },
+  {
+    "id": "profile-154",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: High. total_teachers: 7.0. No of Pakka Class Rooms: 7. Presentbalance: 871809.0. is_critical: 1."
+  },
+  {
+    "id": "profile-155",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 22312.0. is_critical: 1."
+  },
+  {
+    "id": "profile-156",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 621.0. is_critical: 1."
+  },
+  {
+    "id": "profile-157",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 4281.0. is_critical: 1."
+  },
+  {
+    "id": "profile-158",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 2204673.0. is_critical: 1."
+  },
+  {
+    "id": "profile-159",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2352.0. is_critical: 1."
+  },
+  {
+    "id": "profile-160",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-161",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-162",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-163",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-164",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 710.0. is_critical: 1."
+  },
+  {
+    "id": "profile-165",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 2871.0. is_critical: 1."
+  },
+  {
+    "id": "profile-166",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 957.0. is_critical: 1."
+  },
+  {
+    "id": "profile-167",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 341.0. is_critical: 1."
+  },
+  {
+    "id": "profile-168",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 91.0. is_critical: 1."
+  },
+  {
+    "id": "profile-169",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 692.0. is_critical: 1."
+  },
+  {
+    "id": "profile-170",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 6095.0. is_critical: 0."
+  },
+  {
+    "id": "profile-171",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 16178.0. is_critical: 1."
+  },
+  {
+    "id": "profile-172",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-173",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-174",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 29000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-175",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 4. Presentbalance: 17000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-176",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-177",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-178",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 98811.0. is_critical: 1."
+  },
+  {
+    "id": "profile-179",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-180",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-181",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-182",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-183",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Mosque. total_teachers: 1.0. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-184",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-185",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 66851.0. is_critical: 1."
+  },
+  {
+    "id": "profile-186",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-187",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-188",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 127877.0. is_critical: 1."
+  },
+  {
+    "id": "profile-189",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 12238.0. is_critical: 0."
+  },
+  {
+    "id": "profile-190",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-191",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 870.0. is_critical: 1."
+  },
+  {
+    "id": "profile-192",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 354239.0. is_critical: 1."
+  },
+  {
+    "id": "profile-193",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 4906.0. is_critical: 1."
+  },
+  {
+    "id": "profile-194",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 10690.0. is_critical: 1."
+  },
+  {
+    "id": "profile-195",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 14404.0. is_critical: 1."
+  },
+  {
+    "id": "profile-196",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-197",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-198",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-199",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-200",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-201",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 89.0. is_critical: 1."
+  },
+  {
+    "id": "profile-202",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 277572.0. is_critical: 1."
+  },
+  {
+    "id": "profile-203",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-204",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-205",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-206",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 9102.0. is_critical: 1."
+  },
+  {
+    "id": "profile-207",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 57.0. is_critical: 1."
+  },
+  {
+    "id": "profile-208",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 23642.0. is_critical: 1."
+  },
+  {
+    "id": "profile-209",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 15779.0. is_critical: 1."
+  },
+  {
+    "id": "profile-210",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 225499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-211",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 20208.0. is_critical: 1."
+  },
+  {
+    "id": "profile-212",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 668.0. is_critical: 1."
+  },
+  {
+    "id": "profile-213",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 1826.0. is_critical: 1."
+  },
+  {
+    "id": "profile-214",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 17241.0. is_critical: 1."
+  },
+  {
+    "id": "profile-215",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 0. Presentbalance: 27834.0. is_critical: 1."
+  },
+  {
+    "id": "profile-216",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-217",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 119682.0. is_critical: 1."
+  },
+  {
+    "id": "profile-218",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 102968.0. is_critical: 1."
+  },
+  {
+    "id": "profile-219",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 756099.0. is_critical: 1."
+  },
+  {
+    "id": "profile-220",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 12106.0. is_critical: 1."
+  },
+  {
+    "id": "profile-221",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-222",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 725.0. is_critical: 1."
+  },
+  {
+    "id": "profile-223",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 2499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-224",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 43285.0. is_critical: 1."
+  },
+  {
+    "id": "profile-225",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-226",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-227",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 286.0. is_critical: 1."
+  },
+  {
+    "id": "profile-228",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Mosque. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-229",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 5000.0. is_critical: 0."
+  },
+  {
+    "id": "profile-230",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 1800000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-231",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 924.0. is_critical: 1."
+  },
+  {
+    "id": "profile-232",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 217000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-233",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2988.0. is_critical: 1."
+  },
+  {
+    "id": "profile-234",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 400000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-235",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-236",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-237",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Mosque. total_teachers: 1.0. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-238",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-239",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 232000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-240",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-241",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-242",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 305147.0. is_critical: 1."
+  },
+  {
+    "id": "profile-243",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 53521.0. is_critical: 1."
+  },
+  {
+    "id": "profile-244",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 34247.0. is_critical: 1."
+  },
+  {
+    "id": "profile-245",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-246",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-247",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 129621.0. is_critical: 0."
+  },
+  {
+    "id": "profile-248",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 9796.0. is_critical: 1."
+  },
+  {
+    "id": "profile-249",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 21500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-250",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 200000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-251",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 1. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-252",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 4499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-253",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 400000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-254",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 109319.0. is_critical: 1."
+  },
+  {
+    "id": "profile-255",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-256",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-257",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 8. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-258",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 10132.0. is_critical: 1."
+  },
+  {
+    "id": "profile-259",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-260",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 10806.0. is_critical: 1."
+  },
+  {
+    "id": "profile-261",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 3798.0. is_critical: 1."
+  },
+  {
+    "id": "profile-262",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 0. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-263",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 15000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-264",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-265",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 491.0. is_critical: 1."
+  },
+  {
+    "id": "profile-266",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 6.0. No of Pakka Class Rooms: 6. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-267",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-268",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: nan. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-269",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-270",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 6.0. No of Pakka Class Rooms: 7. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-271",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 5.0. No of Pakka Class Rooms: 6. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-272",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 4.0. No of Pakka Class Rooms: 4. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-273",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 6. Presentbalance: 573.0. is_critical: 1."
+  },
+  {
+    "id": "profile-274",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 4.0. No of Pakka Class Rooms: 6. Presentbalance: 501.0. is_critical: 1."
+  },
+  {
+    "id": "profile-275",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-276",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-277",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-278",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 190000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-279",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-280",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 1200.0. is_critical: 1."
+  },
+  {
+    "id": "profile-281",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 6. Presentbalance: 601000.0. is_critical: 1."
+  },
+  {
+    "id": "profile-282",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 1. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-283",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-284",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 10938.0. is_critical: 1."
+  },
+  {
+    "id": "profile-285",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 664.0. is_critical: 1."
+  },
+  {
+    "id": "profile-286",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 2287.0. is_critical: 1."
+  },
+  {
+    "id": "profile-287",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 4. Presentbalance: 1627.0. is_critical: 1."
+  },
+  {
+    "id": "profile-288",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 5.0. No of Pakka Class Rooms: 3. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-289",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 712.0. is_critical: 1."
+  },
+  {
+    "id": "profile-290",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 2. Presentbalance: 553.0. is_critical: 1."
+  },
+  {
+    "id": "profile-291",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 6.0. No of Pakka Class Rooms: 4. Presentbalance: 28030.0. is_critical: 0."
+  },
+  {
+    "id": "profile-292",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 500.0. is_critical: 1."
+  },
+  {
+    "id": "profile-293",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 2. Presentbalance: 41646.0. is_critical: 1."
+  },
+  {
+    "id": "profile-294",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 2.0. No of Pakka Class Rooms: 3. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-295",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 6. Presentbalance: 12203.0. is_critical: 0."
+  },
+  {
+    "id": "profile-296",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 3.0. No of Pakka Class Rooms: 3. Presentbalance: 499.0. is_critical: 1."
+  },
+  {
+    "id": "profile-297",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Girls. LEVEL: Primary. total_teachers: 1.0. No of Pakka Class Rooms: 2. Presentbalance: 0.0. is_critical: 1."
+  },
+  {
+    "id": "profile-298",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 4.0. No of Pakka Class Rooms: 4. Presentbalance: 999.0. is_critical: 1."
+  },
+  {
+    "id": "profile-299",
+    "source": "data/processed/processed_school_data.csv",
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Primary. total_teachers: 5.0. No of Pakka Class Rooms: 8. Presentbalance: 231375.0. is_critical: 0."
+  },
+  {
+    "id": "doc-readme-md-0",
+    "source": "README.md",
+    "text": "# EducationGPT\n\nProfessional school resource analytics and AI advisory dashboard with a FastAPI backend and Streamlit UI.\n\n**Structure**\n1. `src/` Application backend, training, and data pipeline scripts\n2. `ui/` Streamlit dashboard and chat UI\n3. `data/raw/` Raw source spreadsheets\n4. `data/processed/` Processed CSVs for training and analytics\n5. `models/` Trained model artifacts\n6. `config/` Configuration files (reserved)\n\n**Quick Start**\n1. Install dependencies:\n   - `pip install -r requirements.txt`\n2. Build the dataset:\n   - `python src/data_pipeline.py`\n3. Train the model:\n   - `python src/train_model.py`\n4. Build local RAG index:\n   - `python src/build_rag_index.py`\n5. Run the API:\n   - `uvicorn src.api_server:app --port 8000`\n6. Run the dashboard:\n   - `streamlit run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `DEEPSEEK_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_"
+  },
+  {
+    "id": "doc-readme-md-1",
+    "source": "README.md",
+    "text": "t run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `DEEPSEEK_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_URL`\n- `MODEL_PATH`\n- `DATA_DIR`\n- `USE_LOCAL_LLM` (set `true` to use Ollama)\n- `OLLAMA_BASE_URL` (default: `http://localhost:11434/v1`)\n- `OLLAMA_MODEL`\n- `OLLAMA_MODELS`\n- `LOCAL_RAG_TOP_K` (retrieved chunks for local grounded chat)\n- `LOCAL_RAG_MIN_SCORE` (minimum retrieval similarity; higher = stricter refusal)\n- `RAG_INDEX_PATH` (local JSON chunk index used for grounded Ollama responses)"
+  },
+  {
+    "id": "doc-project_report-md-0",
+    "source": "PROJECT_REPORT.md",
+    "text": "﻿<!-- cspell:ignore Streamlit uvicorn -->\n# EducationGPT Project Report\n\n**Date:** 2026-02-09  \n**Owner:** Engr. T. Jamal  \n**Project:** EducationGPT (School Resource Analytics + AI Advisor)\n\n## 1. Executive Summary\nEducationGPT is a professional dashboard and AI advisory system for school resource planning. It combines a FastAPI prediction API, a Streamlit analytics dashboard, and an optional LLM chat advisor. The system ingests multi-source school census and infrastructure data, produces a consolidated dataset, and trains a predictive model to flag potential critical resource shortages.\n\n## 2. Objectives\n1. Provide a data-driven dashboard for resource planning across districts, levels, and gender.\n2. Predict critical shortages using structured school features.\n3. Offer an AI advisor chat that can reason over the dataset and recent predictions.\n4. Deliver a portable, production-ready pr"
+  },
+  {
+    "id": "doc-project_report-md-1",
+    "source": "PROJECT_REPORT.md",
+    "text": "r an AI advisor chat that can reason over the dataset and recent predictions.\n4. Deliver a portable, production-ready project layout aligned with research standards.\n\n## 3. Architecture Overview\n**Runtime Layers**\n1. **Data Pipeline:** `src/data_pipeline.py`  \n2. **Model Training:** `src/train_model.py`  \n3. **API Service:** `src/api_server.py`  \n4. **Dashboard & Chat UI:** `ui/web_app.py`\n\n**Artifacts**\n1. Processed dataset: `data/processed/processed_school_data.csv`\n2. Model package: `models/school_model.pkl`\n\n## 4. Data Sources\nRaw inputs are stored in `data/raw/` and include:\n1. Infrastructure\n2. Furniture\n3. Teacher and Non-Teacher census\n4. PTC funding data\n\nThe pipeline merges these sources, creates a derived target label (`is_critical`), and outputs a clean dataset for training and analytics.\n\n## 5. Modeling\n**Model Type:** RandomForestClassifier  \n**Handling Imbalance:**  \n1. Cl"
+  },
+  {
+    "id": "doc-project_report-md-2",
+    "source": "PROJECT_REPORT.md",
+    "text": "set for training and analytics.\n\n## 5. Modeling\n**Model Type:** RandomForestClassifier  \n**Handling Imbalance:**  \n1. Class-weighted training  \n2. Threshold tuning for macro-F1 on validation  \n\nThe model bundle includes the encoders, imputer, and a calibrated decision threshold.\n\n## 6. Dashboard & Analytics\n**Key Capabilities**\n1. Filtering by District, Level, and Gender\n2. KPI summaries for critical risk, staffing, and funding\n3. Visuals by district and gender\n4. Prediction form with API integration\n\n**AI Advisor (Chat)**\n1. Multi-turn chat with history\n2. Optional DeepSeek integration\n3. Contextual grounding based on dataset and last prediction\n\n## 7. Deployment\nSee `DEPLOYMENT.md` for detailed instructions.\n\n**Quick Start**\n1. `python src/data_pipeline.py`\n2. `python src/train_model.py`\n3. `uvicorn src.api_server:app --port 8000`\n4. `streamlit run ui/web_app.py`\n\n## 8. Risks & Limitat"
+  },
+  {
+    "id": "doc-project_report-md-3",
+    "source": "PROJECT_REPORT.md",
+    "text": "src/train_model.py`\n3. `uvicorn src.api_server:app --port 8000`\n4. `streamlit run ui/web_app.py`\n\n## 8. Risks & Limitations\n1. Class imbalance can reduce minority-class precision.\n2. Prediction quality depends on data completeness and reporting quality.\n3. The LLM advisor relies on external API availability and usage limits.\n\n## 9. Next Steps\n1. Add SMOTE or alternative imbalance strategies.\n2. Add interoperability (feature importance and attribution summaries).\n3. Add model monitoring and drift detection.\n4. Integrate a lightweight DB for audit and analytics history."
+  }
+]

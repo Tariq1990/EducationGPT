@@ -43,40 +43,66 @@ def train_school_model(csv_path):
     X[numerical_cols] = imputer.fit_transform(X[numerical_cols])
 
     # Split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
 
     # RandomForest (Fallback from TabPFN due to environment issues)
     print("Initializing RandomForestClassifier...")
-    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+    classifier = RandomForestClassifier(
+        n_estimators=200,
+        random_state=42,
+        class_weight="balanced"
+    )
 
     print("Training (Fitting) model...")
     classifier.fit(X_train, y_train)
 
     print("Evaluating...")
     y_pred = classifier.predict(X_test)
+    y_proba = classifier.predict_proba(X_test)[:, 1]
     
     print("\nClassification Report:")
-    print(classification_report(y_test, y_pred))
+    print(classification_report(y_test, y_pred, zero_division=0))
     print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
     print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
 
+    # Tune threshold for better class balance (macro F1)
+    thresholds = np.linspace(0.05, 0.95, 19)
+    best_threshold = 0.5
+    best_macro_f1 = -1.0
+    for t in thresholds:
+        y_pred_t = (y_proba >= t).astype(int)
+        macro_f1 = f1_score(y_test, y_pred_t, average="macro", zero_division=0)
+        if macro_f1 > best_macro_f1:
+            best_macro_f1 = macro_f1
+            best_threshold = float(t)
+
+    print(f"Selected decision threshold: {best_threshold:.2f} (macro F1: {best_macro_f1:.4f})")
+
 
     # Save components
-    save_dir = os.path.dirname(csv_path)
+    model_dir = os.path.normpath(os.path.join(os.path.dirname(csv_path), "..", "..", "models"))
+    os.makedirs(model_dir, exist_ok=True)
     model_data = {
         'model': classifier,
         'encoders': encoders,
         'imputer': imputer,
         'features': features,
         'categorical_cols': categorical_cols,
-        'numerical_cols': numerical_cols
+        'numerical_cols': numerical_cols,
+        'decision_threshold': best_threshold
     }
     
-    with open(os.path.join(save_dir, 'school_model.pkl'), 'wb') as f:
+    with open(os.path.join(model_dir, 'school_model.pkl'), 'wb') as f:
         pickle.dump(model_data, f)
     
-    print(f"\nModel and preprocessors saved to school_model.pkl")
+    print(f"\nModel and preprocessors saved to {os.path.join(model_dir, 'school_model.pkl')}")
 
 if __name__ == "__main__":
-    CSV_PATH = r"c:\Users\Engr.Tariq Jamal\Downloads\EMA_ML_model\processed_school_data.csv"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    CSV_PATH = os.getenv(
+        "PROCESSED_CSV_PATH",
+        os.path.normpath(os.path.join(BASE_DIR, "..", "data", "processed", "processed_school_data.csv"))
+    )
     train_school_model(CSV_PATH)

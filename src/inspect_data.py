@@ -1,6 +1,8 @@
 import pandas as pd
-from openpyxl import load_workbook
 import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RAW_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "data", "raw"))
 
 files = [
     'Infrastructure.xlsx',
@@ -21,7 +23,8 @@ def get_columns_robustly(filename):
 
 if __name__ == "__main__":
     for f in files:
-        if os.path.exists(f):
-            get_columns_robustly(f)
+        path = os.path.join(RAW_DIR, f)
+        if os.path.exists(path):
+            get_columns_robustly(path)
         else:
-            print(f"File {f} not found.")
+            print(f"File {path} not found.")

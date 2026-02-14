@@ -8,5 +8,5 @@ streamlit
 python-calamine
 plotly
 httpx
-google-generativeai
+openai
 python-dotenv
