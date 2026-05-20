@@ -25,7 +25,7 @@
 ## Environment Configuration
 
 The `.env` file controls runtime paths and keys:
-1. `DEEPSEEK_API_KEY` (optional for LLM chat)
+1. `GEMINI_API_KEY` (optional for LLM chat)
 2. `PROCESSED_CSV_PATH` (defaults to `data/processed/processed_school_data.csv`)
 3. `PREDICT_API_URL` (defaults to `http://localhost:8000/predict`)
 4. `MODEL_PATH` (defaults to `models/school_model.pkl`)
@@ -72,3 +72,4 @@ To expose this ML model to a mobile app (Flutter or React Native), follow this a
 *   **Containerization**: Use the included `Dockerfile`.
 *   **Hosting**: Deploy the container to **Google Cloud Run**, **AWS App Runner**, or **Azure Container Instances**.
 *   **Database**: Transition from local CSVs to a cloud database like **PostgreSQL** for real-time data storage and historic tracking.
+

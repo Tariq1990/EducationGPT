@@ -2,12 +2,12 @@
   {
     "id": "dataset-overview",
     "source": "data/processed/processed_school_data.csv",
-    "text": "Dataset overview. Total schools: 646. Critical schools: 613. Average teachers per school: 3.11."
+    "text": "Dataset overview. Total schools: 646. Critical schools: 617. Average teachers per school: 3.11."
   },
   {
     "id": "district-MOHMAND",
     "source": "data/processed/processed_school_data.csv",
-    "text": "District summary for MOHMAND. Schools: 646. Critical: 613. Average teachers: 3.11."
+    "text": "District summary for MOHMAND. Schools: 646. Critical: 617. Average teachers: 3.11."
   },
   {
     "id": "profile-0",
@@ -137,7 +137,7 @@
   {
     "id": "profile-25",
     "source": "data/processed/processed_school_data.csv",
-    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 7.0. No of Pakka Class Rooms: 6. Presentbalance: 8107.0. is_critical: 0."
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 7.0. No of Pakka Class Rooms: 6. Presentbalance: 8107.0. is_critical: 1."
   },
   {
     "id": "profile-26",
@@ -217,7 +217,7 @@
   {
     "id": "profile-41",
     "source": "data/processed/processed_school_data.csv",
-    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 4. Presentbalance: 22359.0. is_critical: 0."
+    "text": "School profile. District: MOHMAND. Gender: Boys. LEVEL: Middle. total_teachers: 4.0. No of Pakka Class Rooms: 4. Presentbalance: 22359.0. is_critical: 1."
   },
   {
     "id": "profile-42",
@@ -1512,12 +1512,12 @@
   {
     "id": "doc-readme-md-0",
     "source": "README.md",
-    "text": "# EducationGPT\n\nProfessional school resource analytics and AI advisory dashboard with a FastAPI backend and Streamlit UI.\n\n**Structure**\n1. `src/` Application backend, training, and data pipeline scripts\n2. `ui/` Streamlit dashboard and chat UI\n3. `data/raw/` Raw source spreadsheets\n4. `data/processed/` Processed CSVs for training and analytics\n5. `models/` Trained model artifacts\n6. `config/` Configuration files (reserved)\n\n**Quick Start**\n1. Install dependencies:\n   - `pip install -r requirements.txt`\n2. Build the dataset:\n   - `python src/data_pipeline.py`\n3. Train the model:\n   - `python src/train_model.py`\n4. Build local RAG index:\n   - `python src/build_rag_index.py`\n5. Run the API:\n   - `uvicorn src.api_server:app --port 8000`\n6. Run the dashboard:\n   - `streamlit run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `DEEPSEEK_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_"
+    "text": "# EducationGPT\n\nProfessional school resource analytics and AI advisory dashboard with a FastAPI backend and Streamlit UI.\n\n**Structure**\n1. `src/` Application backend, training, and data pipeline scripts\n2. `ui/` Streamlit dashboard and chat UI\n3. `data/raw/` Raw source spreadsheets\n4. `data/processed/` Processed CSVs for training and analytics\n5. `models/` Trained model artifacts\n6. `config/` Configuration files (reserved)\n\n**Quick Start**\n1. Install dependencies:\n   - `pip install -r requirements.txt`\n2. Build the dataset:\n   - `python src/data_pipeline.py`\n3. Train the model:\n   - `python src/train_model.py`\n4. Build local RAG index:\n   - `python src/build_rag_index.py`\n5. Run the API:\n   - `uvicorn src.api_server:app --port 8000`\n6. Run the dashboard:\n   - `streamlit run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `GEMINI_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_UR"
   },
   {
     "id": "doc-readme-md-1",
     "source": "README.md",
-    "text": "t run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `DEEPSEEK_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_URL`\n- `MODEL_PATH`\n- `DATA_DIR`\n- `USE_LOCAL_LLM` (set `true` to use Ollama)\n- `OLLAMA_BASE_URL` (default: `http://localhost:11434/v1`)\n- `OLLAMA_MODEL`\n- `OLLAMA_MODELS`\n- `LOCAL_RAG_TOP_K` (retrieved chunks for local grounded chat)\n- `LOCAL_RAG_MIN_SCORE` (minimum retrieval similarity; higher = stricter refusal)\n- `RAG_INDEX_PATH` (local JSON chunk index used for grounded Ollama responses)"
+    "text": "t run ui/web_app.py`\n\n**Environment**\nEdit `.env` as needed:\n- `GEMINI_API_KEY`\n- `PROCESSED_CSV_PATH`\n- `PREDICT_API_URL`\n- `MODEL_PATH`\n- `DATA_DIR`\n- `USE_LOCAL_LLM` (set `true` to use Ollama)\n- `OLLAMA_BASE_URL` (default: `http://localhost:11434/v1`)\n- `OLLAMA_MODEL`\n- `OLLAMA_MODELS`\n- `LOCAL_RAG_TOP_K` (retrieved chunks for local grounded chat)\n- `LOCAL_RAG_MIN_SCORE` (minimum retrieval similarity; higher = stricter refusal)\n- `RAG_INDEX_PATH` (local JSON chunk index used for grounded Ollama responses)"
   },
   {
     "id": "doc-project_report-md-0",

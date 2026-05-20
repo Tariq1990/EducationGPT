@@ -26,7 +26,7 @@ Professional school resource analytics and AI advisory dashboard with a FastAPI 
 
 **Environment**
 Edit `.env` as needed:
-- `DEEPSEEK_API_KEY`
+- `GEMINI_API_KEY`
 - `PROCESSED_CSV_PATH`
 - `PREDICT_API_URL`
 - `MODEL_PATH`
@@ -38,3 +38,4 @@ Edit `.env` as needed:
 - `LOCAL_RAG_TOP_K` (retrieved chunks for local grounded chat)
 - `LOCAL_RAG_MIN_SCORE` (minimum retrieval similarity; higher = stricter refusal)
 - `RAG_INDEX_PATH` (local JSON chunk index used for grounded Ollama responses)
+

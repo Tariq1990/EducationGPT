@@ -134,13 +134,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Configuration & Models ---
-api_key = os.getenv("DEEPSEEK_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("DEEPSEEK_API_KEY")
 use_local_llm = os.getenv("USE_LOCAL_LLM", "false").lower() in ("1", "true", "yes")
 ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
 ollama_model = os.getenv("OLLAMA_MODEL", "llama3.2:1b")
 ollama_models = [m.strip() for m in os.getenv("OLLAMA_MODELS", "llama3.2:1b,llama3:8b,qwen2.5:7b").split(",") if m.strip()]
 if api_key:
-    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    client = OpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
 else:
     client = None
 
@@ -169,9 +169,9 @@ with st.sidebar:
         if not use_local_llm and client:
             model_choice = st.selectbox(
                 "AI Model",
-                ["deepseek-chat", "deepseek-reasoner"],
+                ["gemini-2.5-flash"],
                 index=0,
-                help="Select Deepseek model."
+                help="Gemini model for cloud advisor."
             )
         else:
             if not ollama_models:
@@ -472,9 +472,9 @@ elif page == "AI Advisor (Chat)":
             st.caption(f"Dataset districts: {', '.join(district_values[:5])} (total {len(district_values)})")
     else:
         if not api_key:
-            st.warning("Local LLM is disabled (Ollama not found). Install Ollama or provide an API key to enable chat.")
+            st.warning("Cloud chat is disabled. Set GEMINI_API_KEY or enable local mode with Ollama.")
     if model_choice is None:
-        model_choice = ollama_model
+        model_choice = ollama_model if use_local_llm else "gemini-2.5-flash"
 
     # Chat UI
     if "messages" not in st.session_state:
@@ -575,7 +575,7 @@ elif page == "AI Advisor (Chat)":
                     elif "429" in err_msg or "Quota" in err_msg:
                         full_res = "Quota Reached: You've hit the usage limit. Please wait a minute or check your plan."
                     elif "402" in err_msg or "Insufficient Balance" in err_msg:
-                        full_res = "Insufficient Balance: Your Deepseek API account has run out of credits. Please top up your balance at platform.deepseek.com."
+                        full_res = "Billing issue: Please verify your Gemini API billing/quota configuration and try again."
                     else:
                         full_res = f"AI Notice: I encountered an error ({err_msg}). Here is my local analytical assessment:\n\n"
                         p = prompt.lower()
@@ -598,3 +598,6 @@ elif page == "AI Advisor (Chat)":
                 
                 response_placeholder.markdown(full_res)
                 st.session_state.messages.append({"role": "assistant", "content": full_res})
+
+
+
