@@ -1,0 +1,754 @@
+<!DOCTYPE html><html class="no-js"><head>
+        <meta charset="utf-8">
+        <title>KPEMA | Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/kpklogo.ico">
+        <link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link id="default-style" href="css/dashboard-style.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/datepicker.min.css">
+        <script src="js/bootstrap-datepicker.min.js"></script>
+                        <!-- end: CSS -->
+        <script type="text/javascript">
+            $(window).load(function () {
+                $(".loader").fadeOut("slow");
+            });
+        </script>
+        <!--Charts scripts-->
+            </head>
+    <body class="class-dashboard">
+        <input type="hidden" name="isSettled" id="isSettled" value="0">
+        <div class="loader" style="display: none;"></div>
+        <nav class="navbar navbar-default nav-top navbar-static-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                <span class="logo-img">
+                    <img src="images/logo.svg" alt="KPEMA" style="max-width:77px;width:100%;">
+                </span>
+            </a>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                                                              <li class="dropdown active">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+                      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                      <li><a href="dashboard.php">Home</a></li>
+                                       </ul>
+                    </li>
+                    
+                    
+                     
+                    
+                     <!--li ><a href="map.php">Map</a></li-->
+                                         <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location Tracker  <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li>
+                             <a href="schools-on-map.php">Schools</a>   
+                            </li>  
+                            <li>
+                             <a href="districts.php">Tracker</a>   
+                            </li>  
+                             <li>
+                             <a href="daily-visits.php">Daily Visits Tracker</a>   
+                            </li> 
+                        </ul>
+                    </li>
+                                         <li class="dropdown open">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Reports <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Surveys</a>
+                                <ul class="dropdown-menu">
+                                                                       <li><a href="reports.php?r=monitor-wise-survey-done&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Monitor Wise Survey Done</a></li>
+                                    <li><a href="reports.php?r=monitor-wise-coverage&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Monitor Wise Coverage</a></li>
+                                     <li><a href="reports.php?r=roaster-assignment&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Roaster Assignment</a></li>
+                                    <li><a href="reports.php?r=school-not-surveyed&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">School Not Surveyed</a></li>
+                                        <li><a href="reports.php?r=monitor-daily-visits&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Monitor Wise Daily Visits</a></li> 
+                                                                           <li><a href="reports.php?r=survey-done&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Survey Done</a></li>
+                                   <li><a href="reports.php?r=survey-timing-report&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Survey Timing Report</a></li>
+                                    
+                                </ul>
+                            </li>
+                              <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Schools</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=closed-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Closed Schools</a></li>
+                                                                        <li><a href="reports.php?r=partially-occupied-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Partially Occupied Schools</a></li>
+                                      <li><a href="reports.php?r=wholly-occupied-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Wholly Occupied Schools</a></li>
+                                       <li><a href="reports.php?r=building-availability&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Building Availability</a></li>
+                                        <li><a href="reports.php?r=basic-facilities&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Basic Facilities</a></li>
+                                         <li><a href="reports.php?r=adminisrative-visits&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Administrative Visits</a></li>
+                                          <li><a href="reports.php?r=schoolleaders-visits&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">School Leaders Visits</a></li>
+                                          <li><a href="reports.php?r=ptc-council&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Parent Teacher Council (PTC)</a></li>
+										  <li><a href="reports.php?r=single-teacher&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Single Teacher Schools</a></li>
+                                   </ul>
+                            </li>
+                               <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Enrollment/Books</a>
+                                <ul class="dropdown-menu">
+                                                                        <li><a href="reports.php?r=ftb-new-application&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">FTB New Application</a></li>
+                                    <li><a href="reports.php?r=class-wise-enrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Class Wise Enrollment</a></li>
+                                      <li><a href="reports.php?r=enrollment-gap&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Enrollment Gap</a></li>
+					<li><a href="reports.php?r=stipend&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Stipend</a></li>
+                                        <li><a href="reports.php?r=new-enrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">New Enrollment</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Teaching Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=absent-teaching-staff-unauth&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Absent Teaching Staff (Un-authorised)</a></li>
+                                    <li><a href="reports.php?r=teaching-staff-attendance&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Teaching Staff Attendance</a></li>
+                                 <li><a href="reports.php?r=vacant-posts&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Vacant Posts</a></li>
+                                 <li><a href="reports.php?r=teacher-wrong-posting&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Teachers On Wrong Posts</a></li>
+                                                                   <li><a href="reports.php?r=teachers-appointed-by-otherorg&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Teachers Appointed by PTC or Other org</a></li>
+                                                                  <li><a href="teacher-search.php">Search Teacher</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Non Teaching Staff</a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li><a href="reports.php?r=absent-non-teaching-staff-unauth&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Absent Non Teaching Staff (Un-authorised)</a></li>
+                                    
+                                    <li><a href="reports.php?r=non-teaching-staff-attendance&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Non Teaching Staff Attendance</a></li>
+                                    <li><a href="reports.php?r=vacant-nonteaching-staff&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Vacant Non Teaching Staff</a></li>
+                                 <li><a href="non-teacher-search.php">Search Non-Teacher</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Revisits</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=teaching-staff-attendance-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Teaching Staff Attendance (Revisit)</a></li>
+                                    <li><a href="reports.php?r=absent-teaching-staff-unauth-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Absent Teaching Staff (Un-authorised) Revisit</a></li>
+                                    <li><a href="reports.php?r=non-teaching-staff-attendance-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Non Teaching Staff Attendance (Revisit)</a></li>
+                                    <li><a href="reports.php?r=absent-nonteaching-staff-unauth-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Absent Non Teaching Staff (Un-authorised) Revisit</a></li>
+                                    <li><a href="reports.php?r=school-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">School Revisit</a></li>
+                                     <li><a href="reports.php?r=student-enrollment-revisit&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Student Enrollment (Revisit)</a></li>
+                                </ul>
+                            </li>
+                              <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">GCS Schools</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=gcs-schools-information&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">GCS Schools Information</a></li>
+                                    <li><a href="reports.php?r=gcs-student-attendance&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">GCS Student Attendance</a></li>
+                                    <li><a href="reports.php?r=gcs-teacher-attendance&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">GCS Teacher Attendance</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Proxy Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=proxy-staff&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Proxy Staff</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">ASC</a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="reports.php?r=furniture&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Furniture</a></li>
+                                            <li><a href="reports.php?r=infrastructure&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Infrastructure</a></li>
+                                <li><a href="reports.php?r=sanctioned-filled-teaching-staff&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Sanctioned &amp; Filled Teaching Staff</a></li>
+                                            <li><a href="reports.php?r=sancioned-filled-non-teaching-staff&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Sanctioned &amp; Filled Non Teaching Staff</a></li>
+                                            <li><a href="reports.php?r=classwise-enrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Class  Wise Enrollment</a></li>
+                                            
+                                            <li><a href="reports.php?r=census-teacherInfo&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Teacher Information</a></li>
+                                            <li><a href="reports.php?r=census-nonteacherInfo&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Non Teacher Information</a></li>
+                                            <li><a href="reports.php?r=census-agewise-enrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Age  Wise Enrollment</a></li>
+                                            <li><a href="reports.php?r=census-disabled-students&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">Disabled Students</a></li>
+                                            <li><a href="reports.php?r=census-ptc-info&amp;districtCommaSep=mohmand&amp;reports_start_date=2025-26">PTC Information</a></li>
+                        </ul>
+                    </li>
+                      <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Double Shift</a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="reports.php?r=dss-teachers&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Double Shift Teachers</a></li>
+                                            <li><a href="reports.php?r=dss-nonteachers&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Double Shift NonTeachers</a></li>
+                                <li><a href="reports.php?r=dss-schoolvisits&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Double Shift School Visits</a></li>
+                                            <li><a href="reports.php?r=dss-stdenrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Double Shift Students Enrollment</a></li>
+                                            
+                        </ul>
+                    </li>
+                     <li><a href="schools-list.php">Flood Affected Schools</a></li>
+                     <li><a href="http://175.107.63.44:81/ftbSA2025/dashboard.php" target="blank">FTB Activity 2025</a></li>
+                                <li><a href="reports.php?r=GetFurnitureComparison&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Furniture Comparison</a></li>
+                                <li><a href="reports.php?r=PTCUnspentAmount&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">PTC Unspent Amount</a></li>
+                                <!--Special Task-->
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Special Task 2026</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="reports.php?r=specialTaskSurvey-done&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Special Task Surveys Done</a></li>
+                                        <li><a href="reports.php?r=specialTaskClassRooms&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Class Rooms Details</a></li>
+                                        <li><a href="reports.php?r=specialTaskEnrollment&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Enrollment</a></li>
+                                        <li><a href="reports.php?r=specialTaskExistingFurniture&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Existing Furniture</a></li>
+                                        <li><a href="reports.php?r=specialTaskNewFurniture&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">New Furniture Provided</a></li>
+                                        <li><a href="reports.php?r=specialTaskNon-Teaching&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Non Teaching Staff</a></li>
+                                        <li><a href="reports.php?r=specialTaskTeaching&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Teaching Staff</a></li>
+                                        <li><a href="reports.php?r=specialTaskPTCFund&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">PTC Fund</a></li>
+                                        <li><a href="reports.php?r=specialTaskSanctionedTeaching&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Sanctioned Posts Teaching</a></li>
+                                        <li><a href="reports.php?r=specialTaskSanctionedNonTeaching&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Sanctioned Posts Non-Teaching</a></li>
+                        </ul>
+                    </li>
+                                <!--Special Task Ends-->
+                            </ul>
+                        </li>
+                    <!--Statistics Reports-->
+                     <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Statistics <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Schools List</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=regular-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Regular Schools</a></li>
+                                          <li><a href="reports.php?r=dss-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">Double Shift Schools</a></li>
+                                          <li><a href="reports.php?r=gcs-schools&amp;districtCommaSep=mohmand&amp;reports_start_date=08-01-2026 - 08-30-2026">GCS Schools</a></li> 
+                                </ul>
+                    </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="statistics-reports.php?r=teaching-staff-list&amp;districtCommaSep=mohmand">Teaching Staff List</a></li>
+                                    <li><a href="statistics-reports.php?r=non-teaching-staff-list&amp;districtCommaSep=mohmand">Non Teaching Staff List</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="statistics-reports.php?r=circles-list&amp;districtCommaSep=mohmand">Circle Offices</a>
+                            </li>
+                            <li><a href="dashboard-graphs.php">Info</a></li>
+                        </ul>
+                     </li>
+                    <!--NMD Reposts End-->
+                                         <li><a href="cluster-management.php">Admin</a></li>   
+                                          
+                                          <li><a href="performa.php">Proforma</a></li>
+                      <!--li><a href="http://175.107.63.44:81/ftbSA2024/dashboard.php" target="blank">FTB Activity</a></li-->
+                      <li><a href="trends-graphs.php">DSR<!--span style="position: absolute;top: -15px;right: -21px;"><img src="images/new-icon-gif.gif" style="width: 53px;"></span--></a></li>
+                                  </ul>
+                <ul class="nav navbar-nav navbar-right">
+                                         <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dmo mohmand <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="add-dmo.php?q=MjcwNjY-">Edit Profile</a></li>
+                          <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                                   
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+        <div class="wrapper"><div class="section dashboard-search-form-section">
+    <div class="container">
+        <div class="total-and-surveyed"><span class="surveyed-schools">117</span><span class="total-schools"> of 644</span></div>
+        <div class="search-form">
+            <form name="dashboard_serch" action="dashboard.php" method="post">
+                <div class="search-input-col">
+                    <label>Date</label>
+                    <input name="dashboard_date" id="dashboardDate" class="datepicker date-monthyear" placeholder="Date" required="required" value="Aug-2026" autocomplete="off">
+                </div>
+                <div class="search-input-col">
+                    <label>District</label>
+                      <select name="district" id="dashboardDistricts" class="populate-tehsils districts">
+                                  <option value="mohmand" selected="selected">MOHMAND</option>                              </select>
+                </div>
+                   <div class="search-input-col">
+                       <label>Tehsil</label>
+                      <select name="thesil" id="dashboardThesil" class="populate-ucs tehsils"><option value="">Tehsil</option></select>
+                </div>
+                <div class="search-input-col">
+                    <label>UC</label>
+                      <select name="ucs" id="dashboardUcs" class="ucs"><option value="">UC</option></select>
+                </div>
+                <div class="search-input-col">
+                    <label>Gender</label>
+                      <select name="gender" id="dashboardGender">
+                           <option value="Boys">Boys</option>
+                            <option value="Girls">Girls</option>
+                             <option value="" selected="selected">Both</option>
+                      </select>
+                </div>
+                <div class="search-input-col">
+                    <label>Level</label>
+                     <select name="school_level" id="dashboardLevel">
+                             <option value="" selected="selected">All</option>
+                           <option value="Mosque">Mosque</option>
+                            <option value="Primary">Primary School</option>
+                             <option value="Middle">Middle School</option>
+                            <option value="High">High School</option>
+                            <option value="Higher Secondary">Higher Secondary School</option>
+                      </select>
+                </div>
+                <div class="search-input-col search-submit-form-area"><input type="submit" name="SearchDistrict" value="Search" class="btn btn-primary green search-button"></div>
+            </form>
+     </div>
+    </div><!-- /.container-fluid -->
+</div>
+<div class="section dashboard-graphs-section">
+    <!--div class="container"-->
+    <div class="col-sm-12">
+        <div class="col-sm-3 bg-white">
+            <div id="total-surveys">
+                <!--Module Title-->
+                <h2>Total Surveys</h2>
+                <div class="module-container">
+                    <!--DIV For Graph-->
+                    <div class="front-content" style="display: block;">
+
+                        <div class="graph" style="margin: 0px;">
+                            <div style="margin: auto;width: 230px">
+                                <div id="totalSurveysDonePercentDiv" style="color: rgb(22, 73, 54); width: 220px; position: absolute; padding-top: 80px; text-align: center;">
+                                    <div style="height: 35px;">
+                                        <span style="font-size: 40px">18</span>
+                                        <span style="font-size: 28px">%</span>
+                                    </div>
+                                    <span style="font-size: 14px">surveys</span>
+                                </div>
+                                <div id="totalSurveys" class="am-chart" style="width: 215px; height: 215px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 215px; height: 215px;"><svg version="1.1" style="position: absolute; width: 215px; height: 215px; left: 0.25px; top: -0.4375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L214.5,0.5 L214.5,214.5 L0.5,214.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M107.5,36.5 L107.5,18.5 A89,89,0,0,1,188.42442332358544,70.45627300412198 L172.05768602218615,77.94826273362541 A71,71,0,0,0,107.5,36.5 Z" fill="#144935" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M172.05768602218615,77.94826273362541 L188.42442332358544,70.45627300412198 A89,89,0,1,1,107.49999999999997,18.5 L107.49999999999999,36.5 A71,71,0,1,0,172.05768602218615,77.94826273362541 Z" fill="#2EC389" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g id="balloons"></g><g></g><g></g></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(255, 255, 255); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                            </div>
+                        </div>
+                        <div id="totalSurveys_chart1" class="bar-chart">
+                            <ul>
+                                <li class="survey-boys">
+                                    <i class="fa fa-male"></i> Boys
+                                </li>
+                                <li class="survey-girls">
+                                    <i class="fa fa-male"></i> Girls
+                                </li>
+                            </ul>
+                            <div class="graph">
+                                <div class="bar-boy" style="width: 57%;">62%</div>
+                                <div class="bar-girl" style="width: 38%;">38%</div>
+                            </div>
+                            <ul>
+                                <li class="survey-urban">Urban</li>
+                                <li class="survey-rural">Rural</li>
+                            </ul>
+                            <div class="graph">
+                                <div class="bar-urban" style="width: 10%;">9%</div>
+                                <div class="bar-rural" style="width: 85%;">91%</div>
+                            </div>
+                        </div>
+                        <div class="graph">
+                            <div id="total-surveys-2" class="am-chart" style="width: 260px; height: 125px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 260px; height: 125px; cursor: default;"><svg version="1.1" style="position: absolute; width: 260px; height: 125px; top: 0.4375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L259.5,0.5 L259.5,124.5 L0.5,124.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L259.5,0.5 L259.5,104.5 L0.5,104.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,0)"></path></g><g><g transform="translate(0,0)"></g><g transform="translate(0,0)" visibility="visible"><g><path cs="100,100" d="M0.5,104.5 L0.5,104.5 L259.5,104.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,52.5 L0.5,52.5 L259.5,52.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L259.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g></g><g><g transform="translate(0,0)"><g></g><g></g><g clip-path="url(#AmChartsEl-2)"><path cs="100,100" d="M26,104 Q33,104,39,106 Q46,107,52,108 Q59,109,65,109 Q72,108,78,104 Q85,100,91,90 Q98,80,104,70 Q111,59,117,50 Q124,41,130,39 Q136,37,143,40 Q149,42,156,47 Q162,52,168,58 Q175,64,181,68 Q187,72,194,77 Q200,81,207,86 Q213,90,220,94 Q227,98,233,100M0,0 L0,0" fill="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="1" stroke="#000000"></path></g><clipPath id="AmChartsEl-2"><rect x="0" y="0" width="261" height="106" rx="0" ry="0" stroke-width="0"></rect></clipPath></g></g><g clip-path="url(#AmChartsEl-1)"></g><g><g transform="translate(0,0)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(26,117)"><tspan y="6" x="0">M</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(78,117)"><tspan y="6" x="0">P</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(130,117)"><tspan y="6" x="0">MI</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(181,117)"><tspan y="6" x="0">H</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(233,117)"><tspan y="6" x="0">HS</tspan></text></g><g transform="translate(0,0)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,102)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,50)"><tspan y="6" x="0">50</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,-2)"><tspan y="6" x="0">100</tspan></text></g></g><g><path cs="100,100" d="M0.5,104.5 L259.5,104.5 L259.5,104.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.3" stroke="#000000" transform="translate(0,0)"></path><path cs="100,100" d="M0.5,0.5 L259.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,104)"></path><path cs="100,100" d="M0.5,0.5 L0.5,104.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,0)" visibility="visible"></path></g><g><g transform="translate(0,0)" visibility="hidden"><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L0.5,104.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#CC0000" visibility="hidden"></path></g></g><g></g><g><g transform="translate(0,0)"><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(26,104)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(78,104)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(130,39)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(181,68)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(233,100)"></circle></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(200,8)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-1"><rect x="0" y="0" width="259" height="104" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                        </div>
+
+                    </div>
+                    <!--DIV For Graph Data-->
+                    <div class="back-content" style="display: none;">
+                        <p>Graph Data</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 no-padding">
+            <div class="col-sm-12 no-padding space-bellow">
+                <div class="col-sm-3  bg-white">
+                    <div id="school-status">
+                        <div id="more" class="btn-next btn-more" style="display: none;">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Schools Status</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph" style="margin-top:0px">
+                                    <div id="schoolStatus" class="am-chart" style="width: 215px; height: 215px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 215px; height: 215px;"><svg version="1.1" style="position: absolute; width: 215px; height: 215px; left: 0.5px; top: -0.4375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L214.5,0.5 L214.5,214.5 L0.5,214.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M107.5,107.5 L57.930130723946924,33.58228859092695 A89,89,0,0,1,107.50000000000006,18.5 L107.5,107.5 Z" fill="#BE9E63" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M107.5,107.5 L107.5,18.5 A89,89,0,1,1,57.930130723946924,33.58228859092695 L107.5,107.5 Z" fill="#144935" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(125,164)" visibility="visible"><tspan y="6" x="0">91%</tspan><tspan y="19" x="0">opened</tspan></text><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(90,51)" visibility="visible"><tspan y="6" x="0">9%</tspan><tspan y="19" x="0">closed</tspan></text></g><g id="balloons"></g><g></g><g></g></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(255, 255, 255); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-3  bg-white">
+                    <div id="teachers">
+
+                        <div class="module-container">
+                            <h2>Teachers</h2>
+                            <div class="front-content  graph-section">
+                                <div class="graph-val">13<span class="per">%</span><span>Absence</span></div>
+                                <div class="clear"></div>
+                                <div class="graph">
+                                    <div id="teacherPresence" class="am-chart" style="width: 100px; height: 180px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 100px; height: 180px;"><svg version="1.1" style="position: absolute; width: 100px; height: 180px; left: 0.125px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L99.5,0.5 L99.5,179.5 L0.5,179.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L99.5,0.5 L99.5,129.5 L0.5,129.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,10)"></path></g><g><g transform="translate(0,10)"><g><path cs="100,100" d="M50.5,0.5 L50.5,5.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#000000" transform="translate(0,129)"></path><path cs="100,100" d="M50.5,129.5 L50.5,129.5 L50.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.15" stroke="#000000"></path></g></g><g transform="translate(0,10)" visibility="visible"></g></g><g></g><g></g><g></g><g><g transform="translate(0,10)"><g transform="translate(10,129)"><path cs="100,100" d="M0.5,0.5 L0.5,-55.5 L79.5,-55.5 L79.5,0.5 L0.5,0.5 Z" fill="#144935" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(10,73)"><path cs="100,100" d="M0.5,0.5 L0.5,-42.5 L79.5,-42.5 L79.5,0.5 L0.5,0.5 Z" fill="#e5161f" stroke="#FCD202" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(10,30)"><path cs="100,100" d="M0.5,0.5 L0.5,-29.5 L79.5,-29.5 L79.5,0.5 L0.5,0.5 Z" fill="#BE9E63" stroke="#B0DE09" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g></g></g><g><g transform="translate(0,10)"><g></g></g><g transform="translate(0,10)"><g></g></g><g transform="translate(0,10)"><g></g></g></g><g clip-path="url(#AmChartsEl-3)"></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,147)"><tspan y="6" x="0">Teachers</tspan></text></g><g transform="translate(0,10)" visibility="visible"></g></g><g><path cs="100,100" d="M0.5,129.5 L99.5,129.5 L99.5,129.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)"></path><path cs="100,100" d="M0.5,0.5 L99.5,0.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#000000" transform="translate(0,139)"></path><path cs="100,100" d="M0.5,0.5 L0.5,129.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,101)"><tspan y="6" x="0">43.38%</tspan></text></g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,52)"><tspan y="6" x="0">33.09%</tspan></text></g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,15)"><tspan y="6" x="0">23.53%</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(40,18)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-3"><rect x="0" y="10" width="99" height="129" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 15px;"></a></div></div></div>
+                                </div>
+                                <ul style="display: none;">
+                                    <li><span class="sanction"></span>Sanction</li>
+                                    <li><span class="un-auth"></span>Un-auth</li>
+                                    <li><span class="other-duty"></span>Other Duty</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="non-teachers">
+                        <div class="module-container">
+                            <h2>Non Teachers</h2>
+                            <div class="front-content  graph-section">
+                                <div class="graph-val">35<span class="per">%</span><span>Absence</span></div>
+                                <div class="clear"></div>
+                                <div class="graph">
+                                    <div id="teacher-presence-2_chart" class="am-chart" style="width: 100px; height: 180px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 100px; height: 180px;"><svg version="1.1" style="position: absolute; width: 100px; height: 180px; left: 0.125px; top: 0.25px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L99.5,0.5 L99.5,179.5 L0.5,179.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L99.5,0.5 L99.5,129.5 L0.5,129.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,10)"></path></g><g><g transform="translate(0,10)"><g><path cs="100,100" d="M50.5,0.5 L50.5,5.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#000000" transform="translate(0,129)"></path><path cs="100,100" d="M50.5,129.5 L50.5,129.5 L50.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.15" stroke="#000000"></path></g></g><g transform="translate(0,10)" visibility="visible"></g></g><g></g><g></g><g></g><g><g transform="translate(0,10)"><g transform="translate(10,129)"><path cs="100,100" d="M0.5,0.5 L0.5,-14.5 L79.5,-14.5 L79.5,0.5 L0.5,0.5 Z" fill="#144935" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(10,114)"><path cs="100,100" d="M0.5,0.5 L0.5,-97.5 L79.5,-97.5 L79.5,0.5 L0.5,0.5 Z" fill="#e5161f" stroke="#FCD202" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(10,16)"><path cs="100,100" d="M0.5,0.5 L0.5,-15.5 L79.5,-15.5 L79.5,0.5 L0.5,0.5 Z" fill="#BE9E63" stroke="#B0DE09" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g></g></g><g><g transform="translate(0,10)"><g></g></g><g transform="translate(0,10)"><g></g></g><g transform="translate(0,10)"><g></g></g></g><g clip-path="url(#AmChartsEl-4)"></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,147)"><tspan y="6" x="0">Non Teachers</tspan></text></g><g transform="translate(0,10)" visibility="visible"></g></g><g><path cs="100,100" d="M0.5,129.5 L99.5,129.5 L99.5,129.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)"></path><path cs="100,100" d="M0.5,0.5 L99.5,0.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#000000" transform="translate(0,139)"></path><path cs="100,100" d="M0.5,0.5 L0.5,129.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,122)"><tspan y="6" x="0">11.95%</tspan></text></g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,65)"><tspan y="6" x="0">75.47%</tspan></text></g><g transform="translate(0,10)"><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(50,8)"><tspan y="6" x="0">12.58%</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(40,18)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-4"><rect x="0" y="10" width="99" height="129" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 15px;"></a></div></div></div>
+                                </div>
+                                <ul style="display: none;">
+                                    <li><span class="sanction"></span>Sanction</li>
+                                    <li><span class="un-auth"></span>Un-auth</li>
+                                    <li><span class="other-duty"></span>Other Duty</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4  bg-white">
+                    <div id="availability">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Facilities</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;width: 100%;">
+                                <div id="funtionalityStatus-spider" style="width: 300px;height: 245px" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 300px; height: 245px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="300" height="245"><desc>Created with Highcharts 3.0.10</desc><defs><clipPath id="highcharts-1"><rect x="0" y="0" width="280" height="181"></rect></clipPath></defs><rect x="0" y="0" width="300" height="245" rx="5" ry="5" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 150 100.5 L 223.1600225160047 76.72886770770717" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 195.2153805325985 162.73363229229284" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 104.78461946740151 162.73363229229284" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 76.83997748399531 76.72886770770718" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 150 23.575000000000003" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 150 23.575000000000003" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 150 23.575000000000003 L 150 23.575000000000003 L 76.83997748399531 76.72886770770718 L 104.78461946740151 162.73363229229284 L 195.2153805325985 162.73363229229284 L 223.1600225160047 76.72886770770717 L 150 23.575000000000003" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 150 100.5 L 150 100.5 L 150 100.5 L 150 100.5 L 150 100.5 L 150 100.5 L 150 100.5" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"></g><g class="highcharts-axis" zIndex="2"></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-1)"><path fill="none" d="M 140 32.80625 L 207.3072207147243 68.6305582910906 L 184.76322672727252 152.1112959693699 L 96.14108088337946 150.86662332352404 L 67.57157770915535 66.9665790306301 L 140 32.80625" stroke="#144935" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 130 32.80625 L 140 32.80625 L 207.3072207147243 68.6305582910906 L 184.76322672727252 152.1112959693699 L 96.14108088337946 150.86662332352404 L 67.57157770915535 66.9665790306301 L 140 32.80625 L 150 32.80625" stroke-linejoin="round" visibility="visible" stroke-opacity="0.0001" stroke="rgb(192,192,192)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)" style=""><path fill="#144935" d="M 67 62.9665790306301 C 72.328 62.9665790306301 72.328 70.9665790306301 67 70.9665790306301 C 61.672 70.9665790306301 61.672 62.9665790306301 67 62.9665790306301 Z"></path><path fill="#144935" d="M 96 146.86662332352404 C 101.328 146.86662332352404 101.328 154.86662332352404 96 154.86662332352404 C 90.672 154.86662332352404 90.672 146.86662332352404 96 146.86662332352404 Z"></path><path fill="#144935" d="M 184 148.1112959693699 C 189.328 148.1112959693699 189.328 156.1112959693699 184 156.1112959693699 C 178.672 156.1112959693699 178.672 148.1112959693699 184 148.1112959693699 Z"></path><path fill="#144935" d="M 207 64.6305582910906 C 212.328 64.6305582910906 212.328 72.6305582910906 207 72.6305582910906 C 201.672 72.6305582910906 201.672 64.6305582910906 207 64.6305582910906 Z"></path><path fill="#144935" d="M 140 28.80625 C 145.328 28.80625 145.328 36.80625 140 36.80625 C 134.672 36.80625 134.672 28.80625 140 28.80625 Z"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-1)"><path fill="none" d="M 140 47.422 L 203.64921958892407 69.81911490570523 L 176.1723044260788 140.28690583383428 L 96.14108088337946 150.86662332352404 L 74.88757996075582 69.34369225985938 L 140 47.422" stroke="#BE9E63" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 130 47.422 L 140 47.422 L 203.64921958892407 69.81911490570523 L 176.1723044260788 140.28690583383428 L 96.14108088337946 150.86662332352404 L 74.88757996075582 69.34369225985938 L 140 47.422 L 150 47.422" stroke-linejoin="round" visibility="visible" stroke-opacity="0.0001" stroke="rgb(192,192,192)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)" style=""><path fill="#BE9E63" d="M 74 65.34369225985938 L 78 69.34369225985938 74 73.34369225985938 70 69.34369225985938 Z"></path><path fill="#BE9E63" d="M 96 146.86662332352404 L 100 150.86662332352404 96 154.86662332352404 92 150.86662332352404 Z"></path><path fill="#BE9E63" d="M 176 136.28690583383428 L 180 140.28690583383428 176 144.28690583383428 172 140.28690583383428 Z"></path><path fill="#BE9E63" d="M 203 65.81911490570523 L 207 69.81911490570523 203 73.81911490570523 199 69.81911490570523 Z"></path><path fill="#BE9E63" d="M 140 43.422 L 144 47.422 140 51.422 136 47.422 Z"></path></g></g><g class="highcharts-legend" zIndex="7" transform="translate(62,201)"><rect x="0.5" y="0.5" width="174" height="28" rx="5" ry="5" stroke="#909090" stroke-width="1" fill="none" visibility="visible"></rect><g zIndex="1"><g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)"><path fill="none" d="M 0 11 L 16 11" stroke="#144935" stroke-width="2"></path><path fill="#144935" d="M 8 7 C 13.328 7 13.328 15 8 15 C 2.6719999999999997 15 2.6719999999999997 7 8 7 Z"></path><text x="21" y="15" style="color:#274b6d;font-size:12px;cursor:pointer;fill:#274b6d;" text-anchor="start" zIndex="2"><tspan x="21">available</tspan></text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(88.05078125,3)"><path fill="none" d="M 0 11 L 16 11" stroke="#BE9E63" stroke-width="2"></path><path fill="#BE9E63" d="M 8 7 L 12 11 8 15 4 11 Z"></path><text x="21" y="15" style="color:#274b6d;font-size:12px;cursor:pointer;fill:#274b6d;" text-anchor="start" zIndex="2"><tspan x="21">functional</tspan></text></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="150" y="12.075000000000003" text-anchor="middle" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="150">electricity</tspan></text><text x="237.425870260432" y="75.59361279208296" text-anchor="start" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="237.425870260432">water</tspan></text><text x="204.0321593169856" y="178.36888720791706" text-anchor="start" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="204.0321593169856">toilet</tspan></text><text x="95.96784068301442" y="178.36888720791706" text-anchor="end" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="95.96784068301442">building</tspan></text><text x="62.57412973956801" y="68.09361279208298" text-anchor="end" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="62.57412973956801">boundary</tspan><tspan dy="15" x="62.57412973956801">wall</tspan></text><text x="0" y="-9999" text-anchor="middle" style="width:27px;color:#666;cursor:default;font-size:11px;fill:#666;"><tspan x="0">5</tspan></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="147" y="98.5" text-anchor="end" style="width:79px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="147">0</tspan></text><text x="0" y="-9999" text-anchor="end" style="width:79px;color:#666;cursor:default;font-size:11px;fill:#666;"><tspan x="0">100</tspan></text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="rgb(255,255,255)" fill-opacity="0.85" rx="3" ry="3"></rect><text x="8" y="21" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;"></text></g><text x="290" y="240" text-anchor="end" zIndex="8" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;"></text></svg></div></div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;width: 100%;">
+                                <div id="funtionalityStatus" class="high-chart" style="width: 300px; height: 245px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 300px; height: 245px;"><svg version="1.1" style="position: absolute; width: 300px; height: 245px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L299.5,0.5 L299.5,244.5 L0.5,244.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L286.5,0.5 L286.5,227.5 L0.5,227.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(13,10)"></path><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L299.5,-6.5 L286.5,0.5 L0.5,0.5 Z" fill="#d9d9d9" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,244)"></path><path cs="100,100" d="M0.5,0.5 L0.5,227.5 L13.5,220.5 L13.5,-6.5 L0.5,0.5 Z" fill="#d9d9d9" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,17)"></path></g><g><g transform="translate(0,17)"></g><g transform="translate(0,17)" visibility="visible"><g><path cs="100,100" d="M0.5,227.5 L13.5,220.5 L299.5,220.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,189.5 L13.5,182.5 L299.5,182.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,151.5 L13.5,144.5 L299.5,144.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,114.5 L13.5,107.5 L299.5,107.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,76.5 L13.5,69.5 L299.5,69.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,38.5 L13.5,31.5 L299.5,31.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L299.5,-6.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g><g transform="translate(0,17)"><g transform="translate(15,227)"><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L42.5,-6.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-37.5 L29.5,-37.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,-7)"></path><path cs="100,100" d="M0.5,0.5 L0.5,-37.5 L13.5,-44.5 L13.5,-6.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M29.5,0.5 L29.5,-37.5 L42.5,-44.5 L42.5,-6.5 L29.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,-37.5 L13.5,-44.5 L42.5,-44.5 L29.5,-37.5 L0.5,-37.5 Z" fill="#36eca6" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-37.5 L29.5,-37.5 L29.5,0.5 L0.5,0.5 Z" fill="#2DC58A" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(72,227)"><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L42.5,-6.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-165.5 L29.5,-165.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,-7)"></path><path cs="100,100" d="M0.5,0.5 L0.5,-165.5 L13.5,-172.5 L13.5,-6.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M29.5,0.5 L29.5,-165.5 L42.5,-172.5 L42.5,-6.5 L29.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,-165.5 L13.5,-172.5 L42.5,-172.5 L29.5,-165.5 L0.5,-165.5 Z" fill="#36eca6" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-165.5 L29.5,-165.5 L29.5,0.5 L0.5,0.5 Z" fill="#2DC58A" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(129,227)"><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L42.5,-6.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L29.5,-218.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,-7)"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L13.5,-225.5 L13.5,-6.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M29.5,0.5 L29.5,-218.5 L42.5,-225.5 L42.5,-6.5 L29.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,-218.5 L13.5,-225.5 L42.5,-225.5 L29.5,-218.5 L0.5,-218.5 Z" fill="#36eca6" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L29.5,-218.5 L29.5,0.5 L0.5,0.5 Z" fill="#2DC58A" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(186,227)"><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L42.5,-6.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-203.5 L29.5,-203.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,-7)"></path><path cs="100,100" d="M0.5,0.5 L0.5,-203.5 L13.5,-210.5 L13.5,-6.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M29.5,0.5 L29.5,-203.5 L42.5,-210.5 L42.5,-6.5 L29.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,-203.5 L13.5,-210.5 L42.5,-210.5 L29.5,-203.5 L0.5,-203.5 Z" fill="#36eca6" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-203.5 L29.5,-203.5 L29.5,0.5 L0.5,0.5 Z" fill="#2DC58A" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(243,227)"><path cs="100,100" d="M0.5,0.5 L13.5,-6.5 L42.5,-6.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L29.5,-218.5 L29.5,0.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,-7)"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L13.5,-225.5 L13.5,-6.5 L0.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M29.5,0.5 L29.5,-218.5 L42.5,-225.5 L42.5,-6.5 L29.5,0.5 Z" fill="#249e6e" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,-218.5 L13.5,-225.5 L42.5,-225.5 L29.5,-218.5 L0.5,-218.5 Z" fill="#36eca6" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L0.5,-218.5 L29.5,-218.5 L29.5,0.5 L0.5,0.5 Z" fill="#2DC58A" stroke="#FF6600" fill-opacity="1" stroke-width="1" stroke-opacity="0"></path></g></g></g><g><g transform="translate(0,17)"><g></g></g></g><g clip-path="url(#AmChartsEl-5)"></g><g><g transform="translate(0,17)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(29,240)"><tspan y="6" x="0">Electricity</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(86,240)"><tspan y="6" x="0">Water</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(143,240)"><tspan y="6" x="0">Toilet</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(200,240)"><tspan y="6" x="0">Building</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(257,240)"><tspan y="6" x="0">Boundary</tspan><tspan y="19" x="0">wall</tspan></text></g><g transform="translate(0,17)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,225)"><tspan y="6" x="0">70%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,187)"><tspan y="6" x="0">75%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,149)"><tspan y="6" x="0">80%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,112)"><tspan y="6" x="0">85%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,74)"><tspan y="6" x="0">90%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,36)"><tspan y="6" x="0">95%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,-2)"><tspan y="6" x="0">100%</tspan></text></g></g><g><path cs="100,100" d="M0.5,0.5 L286.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,244)"></path><path cs="100,100" d="M0.5,0.5 L0.5,227.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,17)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,17)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(29,182)"><tspan y="6" x="0">Electricity</tspan><tspan y="19" x="0">75%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(86,54)"><tspan y="6" x="0">Water</tspan><tspan y="19" x="0">92%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(143,1)"><tspan y="6" x="0">Toilet</tspan><tspan y="19" x="0">99%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(200,16)"><tspan y="6" x="0">Building</tspan><tspan y="19" x="0">97%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(257,1)"><tspan y="6" x="0">Boundary</tspan><tspan y="19" x="0">wall</tspan><tspan y="32" x="0">99%</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(295,25)" visibility="hidden"><rect x="0.5" y="0.5" width="21" height="14" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,0)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-5"><rect x="0" y="17" width="286" height="227" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 22px;"></a></div></div></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2  bg-white">
+                    <div id="school-occupied">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Schools Occupied</h2>
+                        <div class="module-container" style="width: 120px;height: 205px;">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;width: 100px;">
+                                <div class="front-content graph-section" style="display: block;width: 80px;">
+                                    <div class="graph-val" style="font-size: 45px;">0<span>Total</span></div>
+                                    <div class="clear"></div>
+                                    <div class="occupied-container">
+                                        <div class="occupied-whole occupied-box">
+                                            <span>0</span>
+                                        </div>
+                                        <div class="occupied-text" style="margin-bottom: 5px;">
+                                            <span>Whole</span>														
+                                        </div>
+                                        <div class="occupied-partial occupied-box">
+                                            <span>0</span>
+                                        </div>
+                                        <div class="occupied-text">
+                                            <span>Partial</span>														
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;width: 100px;">
+                                <div class="front-content graph-section" style="display: block;width: 80px;">
+                                    <div class="graph-val" style="font-size: 45px;">1<span>Total</span></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 no-padding">
+
+                <div class="col-sm-3  bg-white">
+                    <div id="school-visit">
+                        <div id="more" class="btn-next btn-more" style="display: none;">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>School Visits</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val">1<span class="per">%</span><span>Visits Done</span></div>
+                                <div class="clear"></div>
+                                <div id="schoolVisits" class="am-chart" style="height: 170px; margin-top: 65px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 203px; height: 170px;"><svg version="1.1" style="position: absolute; width: 203px; height: 170px; left: 0.5px; top: -0.34375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L202.5,0.5 L202.5,169.5 L0.5,169.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L202.5,0.5 L202.5,159.5 L0.5,159.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,10)"></path></g><g><g transform="translate(0,10)"></g><g transform="translate(0,10)" visibility="visible"><g><path cs="100,100" d="M0.5,159.5 L0.5,159.5 L202.5,159.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,119.5 L0.5,119.5 L202.5,119.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,80.5 L0.5,80.5 L202.5,80.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,40.5 L0.5,40.5 L202.5,40.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L202.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g><g transform="translate(0,10)"><g transform="translate(5,119)"><path cs="100,100" d="M0.5,0.5 L0.5,-78.5 L40.5,-78.5 L40.5,0.5 L0.5,0.5 Z" fill="#144935" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(56,119)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g><g transform="translate(106,119)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g><g transform="translate(157,119)"><path cs="100,100" d="M0.5,0.5 L0.5,-78.5 L40.5,-78.5 L40.5,0.5 L0.5,0.5 Z" fill="#A4BF8A" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g></g></g><g><g transform="translate(0,10)"><g></g></g></g><g clip-path="url(#AmChartsEl-6)"></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(25,172)"><tspan y="6" x="0">D.E.O</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(76,172)"><tspan y="6" x="0">S.D.E.O</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(126,172)"><tspan y="6" x="0">A.D.O</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(177,172)"><tspan y="6" x="0">Others</tspan></text></g><g transform="translate(0,10)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,157)"><tspan y="6" x="0">-0.5</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,117)"><tspan y="6" x="0">0.0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,78)"><tspan y="6" x="0">0.5</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,38)"><tspan y="6" x="0">1.0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,-2)"><tspan y="6" x="0">1.5</tspan></text></g></g><g><path cs="100,100" d="M0.5,119.5 L202.5,119.5 L202.5,119.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.3" stroke="#000000" transform="translate(0,10)"></path><path cs="100,100" d="M0.5,0.5 L202.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,169)"></path><path cs="100,100" d="M0.5,0.5 L0.5,159.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(25,20)"><tspan y="6" x="0">D.E.O</tspan><tspan y="19" x="0">1</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(76,99)"><tspan y="6" x="0">S.D.E.O</tspan><tspan y="19" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(126,99)"><tspan y="6" x="0">A.D.O</tspan><tspan y="19" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(177,20)"><tspan y="6" x="0">Others</tspan><tspan y="19" x="0">1</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(143,18)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-6"><rect x="0" y="10" width="202" height="159" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 15px;"></a></div></div></div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 bg-white">
+                    <div id="students">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Students</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val">44<span class="per">%</span><span>Absence</span></div>
+                                <div class="clear"></div>
+                                <div class="graph" style="margin-top:85px;">
+                                    <div id="studentPresence" class="am-chart" style="height: 150px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 203px; height: 150px;"><svg version="1.1" style="position: absolute; width: 203px; height: 150px; left: 0.125px; top: -0.34375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L202.5,0.5 L202.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L192.5,0.5 L192.5,149.5 L0.5,149.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,0)"></path></g><g><g transform="translate(0,0)"></g><g transform="translate(0,0)" visibility="visible"><g><path cs="100,100" d="M0.5,149.5 L0.5,149.5 L0.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M96.5,149.5 L96.5,149.5 L96.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M192.5,149.5 L192.5,149.5 L192.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g><g transform="translate(0,0)"><g transform="translate(0,120)"><path cs="100,100" d="M0.5,0.5 L0.5,19.5 L167.5,19.5 L167.5,0.5 L0.5,0.5 Z" fill="#F7CF87" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(0,83)"><path cs="100,100" d="M0.5,0.5 L0.5,19.5 L25.5,19.5 L25.5,0.5 L0.5,0.5 Z" fill="#BE9E63" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(0,46)"><path cs="100,100" d="M0.5,0.5 L0.5,19.5 L165.5,19.5 L165.5,0.5 L0.5,0.5 Z" fill="#144935" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g><g transform="translate(0,9)"><path cs="100,100" d="M0.5,0.5 L0.5,19.5 L27.5,19.5 L27.5,0.5 L0.5,0.5 Z" fill="#2EC389" stroke="#FF6600" fill-opacity="0.8" stroke-width="1" stroke-opacity="0"></path></g></g></g><g><g transform="translate(0,0)"><g></g></g></g><g clip-path="url(#AmChartsEl-7)"></g><g><g transform="translate(0,0)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-7,17)"><tspan y="6" x="0">Girls</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-7,54)"><tspan y="6" x="0">Boys</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-7,91)"><tspan y="6" x="0">Urban</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-7,128)"><tspan y="6" x="0">Rural</tspan></text></g><g transform="translate(0,0)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(0,167)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(96,167)"><tspan y="6" x="0">50</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(192,167)"><tspan y="6" x="0">100</tspan></text></g></g><g><path cs="100,100" d="M0.5,149.5 L0.5,0.5 L0.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.3" stroke="#000000" transform="translate(0,0)"></path><path cs="100,100" d="M0.5,0.5 L0.5,149.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,0)"></path><path cs="100,100" d="M0.5,0.5 L192.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,149)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,0)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(46,18)"><tspan y="6" x="0">Girls</tspan><tspan y="19" x="0">14%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(184,55)"><tspan y="6" x="0">Boys</tspan><tspan y="19" x="0">86%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(48,92)"><tspan y="6" x="0">Urban</tspan><tspan y="19" x="0">13%</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(187,129)"><tspan y="6" x="0">Rural</tspan><tspan y="19" x="0">87%</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(133,8)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-7"><rect x="0" y="0" width="192" height="149" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <div id="student-presence-2" class="am-chart" style="width: 230px; height: 230px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 230px; height: 230px; cursor: default;"><svg version="1.1" style="position: absolute; width: 230px; height: 230px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L229.5,0.5 L229.5,229.5 L0.5,229.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L229.5,0.5 L229.5,209.5 L0.5,209.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,0)"></path></g><g><g transform="translate(0,0)"></g><g transform="translate(0,0)" visibility="visible"><g><path cs="100,100" d="M0.5,209.5 L0.5,209.5 L229.5,209.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,157.5 L0.5,157.5 L229.5,157.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,105.5 L0.5,105.5 L229.5,105.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,52.5 L0.5,52.5 L229.5,52.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L229.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g></g><g><g transform="translate(0,0)"><g></g><g></g><g clip-path="url(#AmChartsEl-9)"><path cs="100,100" d="M23,209 Q29,209,35,211 Q40,212,46,214 Q52,215,58,214 Q63,214,69,209 Q75,205,81,197 Q86,189,92,179 Q98,169,104,158 Q109,148,115,137 Q121,127,126,109 Q132,91,138,75 Q143,59,149,48 Q154,38,160,41 Q166,44,171,64 Q177,84,183,109 Q189,133,194,156 Q200,179,206,188M0,0 L0,0" fill="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="1" stroke="#000000"></path></g><clipPath id="AmChartsEl-9"><rect x="0" y="0" width="231" height="211" rx="0" ry="0" stroke-width="0"></rect></clipPath></g></g><g clip-path="url(#AmChartsEl-8)"></g><g><g transform="translate(0,0)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(23,222)"><tspan y="6" x="0">M</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(69,222)"><tspan y="6" x="0">P</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(115,222)"><tspan y="6" x="0">MI</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(160,222)"><tspan y="6" x="0">H</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(206,222)"><tspan y="6" x="0">HS</tspan></text></g><g transform="translate(0,0)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,207)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,155)"><tspan y="6" x="0">20</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,103)"><tspan y="6" x="0">40</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,50)"><tspan y="6" x="0">60</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,-2)"><tspan y="6" x="0">80</tspan></text></g></g><g><path cs="100,100" d="M0.5,209.5 L229.5,209.5 L229.5,209.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.3" stroke="#000000" transform="translate(0,0)"></path><path cs="100,100" d="M0.5,0.5 L229.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,209)"></path><path cs="100,100" d="M0.5,0.5 L0.5,209.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,0)" visibility="visible"></path></g><g><g transform="translate(0,0)" visibility="hidden"><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L0.5,209.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#CC0000" visibility="hidden"></path></g></g><g></g><g><g transform="translate(0,0)"><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(23,209)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(69,209)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(115,137)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(160,41)"></circle><circle r="4" cx="0" cy="0" fill="#BE9E63" stroke="#BE9E63" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(206,188)"></circle></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(238,8)" visibility="hidden"><rect x="0.5" y="0.5" width="21" height="14" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,0)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-8"><rect x="0" y="0" width="229" height="209" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-3 bg-white">
+                    <div id="vacantTeachersandSingleTeacherSchools">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Vacant Teaching Posts</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val" style="font-size: 38px;">0</div>
+                                <div class="clear"></div>
+                                <div class="graph" style="margin-top:45px;">
+                                    <div id="convacantTeachers" class="am-chart" style="height: 190px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 203px; height: 190px;"><svg version="1.1" style="position: absolute; width: 203px; height: 190px; left: -0.25px; top: -0.34375px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L202.5,0.5 L202.5,189.5 L0.5,189.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L202.5,0.5 L202.5,179.5 L0.5,179.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(0,10)"></path></g><g><g transform="translate(0,10)"></g><g transform="translate(0,10)" visibility="visible"><g><path cs="100,100" d="M0.5,179.5 L0.5,179.5 L202.5,179.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,143.5 L0.5,143.5 L202.5,143.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,107.5 L0.5,107.5 L202.5,107.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,72.5 L0.5,72.5 L202.5,72.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,36.5 L0.5,36.5 L202.5,36.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L202.5,0.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.15" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g><g transform="translate(0,10)"><g transform="translate(5,179)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g><g transform="translate(56,179)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g><g transform="translate(106,179)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g><g transform="translate(157,179)"><path cs="100,100" d="M0.5,0.5 L40.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#FF6600"></path></g></g></g><g><g transform="translate(0,10)"><g></g></g></g><g clip-path="url(#AmChartsEl-10)"></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(25,192)"><tspan y="6" x="0">Primary</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(76,192)"><tspan y="6" x="0">Middle</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(126,192)"><tspan y="6" x="0">High</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(177,192)"><tspan y="6" x="0">HSS</tspan></text></g><g transform="translate(0,10)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,177)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,141)"><tspan y="6" x="0">2</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,105)"><tspan y="6" x="0">4</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,70)"><tspan y="6" x="0">6</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,34)"><tspan y="6" x="0">8</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="end" transform="translate(-12,-2)"><tspan y="6" x="0">10</tspan></text></g></g><g><path cs="100,100" d="M0.5,179.5 L202.5,179.5 L202.5,179.5" fill="none" stroke-width="1" stroke-dasharray="4" stroke-opacity="0.3" stroke="#000000" transform="translate(0,10)"></path><path cs="100,100" d="M0.5,0.5 L202.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,189)"></path><path cs="100,100" d="M0.5,0.5 L0.5,179.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(0,10)" visibility="visible"></path></g><g></g><g></g><g><g transform="translate(0,10)"><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(25,159)"><tspan y="6" x="0">Primary</tspan><tspan y="19" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(76,159)"><tspan y="6" x="0">Middle</tspan><tspan y="19" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(126,159)"><tspan y="6" x="0">High</tspan><tspan y="19" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(177,159)"><tspan y="6" x="0">HSS</tspan><tspan y="19" x="0">0</tspan></text></g></g><g><g></g></g><g id="balloons"></g><g><g transform="translate(143,18)" visibility="hidden"><rect x="0.5" y="0.5" width="68" height="27" rx="0" ry="0" stroke-width="1" fill="#e5e5e5" stroke="#e5e5e5" fill-opacity="1" stroke-opacity="1" opacity="0" transform="translate(-8,-8)"></rect><text y="6" fill="#000000" font-family="Verdana" font-size="11" opacity="1" text-anchor="start" transform="translate(0,7)"><tspan y="6" x="0">Show all</tspan></text></g></g><g></g><clipPath id="AmChartsEl-10"><rect x="0" y="10" width="202" height="179" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 15px;"></a></div></div></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <div id="singleteacherSchools" class="am-chart" style="width: 230px; height: 230px; overflow: hidden; text-align: left;"><div style="position: relative;"><div style="overflow: hidden; position: relative; text-align: left; width: 230px; height: 230px;"><svg version="1.1" style="position: absolute; width: 230px; height: 230px;"><desc>JavaScript chart by amCharts 3.4.8</desc><g><path cs="100,100" d="M0.5,0.5 L229.5,0.5 L229.5,229.5 L0.5,229.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M115,115 L104.88125440932666,19.53476555483023 A96,96,0,0,1,114.99999999999997,19 L115,115 Z" fill="#BE9E63" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M115,115 L115,19 A96,96,0,1,1,104.88125440932666,19.53476555483023 L115,115 Z" fill="#144935" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(118,180)" visibility="visible"><tspan y="6" x="0">98%</tspan><tspan y="19" x="0">Total</tspan></text><text y="6" fill="#FFFFFF" font-family="Verdana" font-size="11" opacity="1" text-anchor="middle" transform="translate(112,50)" visibility="visible"><tspan y="6" x="0">2%</tspan><tspan y="19" x="0">Single Teacher School</tspan></text></g><g id="balloons"></g><g></g><g></g></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(255, 255, 255); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--div class="col-sm-3 bg-white">
+                    <div id="school-without">
+
+                        <h2>Schools Without</h2>
+
+                        <div class="module-container">
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph" style="margin-top: 0px;">
+                                    <div id="miscSchoolInfo" class="am-chart" style="height: 190px" ></div>
+                                </div>
+                                <ul>
+                                    <li>
+                                       <i class="fa fa-book"></i>
+                                        Textbook
+                                    </li>
+                                    <li>
+                                       <i class="fa fa-money"></i>
+                                        Stipend
+                                    </li>
+                                    <li>
+                                     <i class="fa fa-graduation-cap"></i>
+                                        TeacherGuide
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div-->
+                <div class="col-sm-3 bg-white">
+                    <div id="top-districts">
+                        <!--Module Title-->
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <h2>Top 5 Tehsils</h2>
+
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <ul>
+                                    <li class="color-1 bourder">0.0% <span style="margin-left: 15px;">SAFI</span><div class="arrow-up"></div></li>
+                                    <li class="color-2 bourder">0.0% <span style="margin-left: 15px;">PANDIALI</span><div class="arrow-up"></div></li>
+                                    <li class="color-3 bourder">0.0% <span style="margin-left: 15px;">AMBAR</span><div class="arrow-up"></div></li>
+                                    <li class="color-4 bourder">0.0% <span style="margin-left: 15px;">KHWEZAI</span><div class="arrow-up"></div></li>
+                                    <li class="color-5 bourder">0.0% <span style="margin-left: 15px;">PRANG GHAR</span><div class="arrow-up"></div></li>
+                                </ul>
+                                <div class="btn">
+                                    <div id="surveys_button" class="pressed bourder">Surveys</div>
+                                    <div id="teachers_button" class="unpressed bourder">Teachers</div>
+                                    <div id="students_button" class="unpressed bourder">Students</div>
+
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <ul>
+                                    <li class="color-5 bourder">0.0% <span style="margin-left: 15px;">SAFI</span><div class="arrow-down"></div></li>
+                                    <li class="color-4 bourder">0.0% <span style="margin-left: 15px;">PANDIALI</span><div class="arrow-down"></div></li>
+                                    <li class="color-3 bourder">0.0% <span style="margin-left: 15px;">AMBAR</span><div class="arrow-down"></div></li>
+                                    <li class="color-2 bourder">0.0% <span style="margin-left: 15px;">KHWEZAI</span><div class="arrow-down"></div></li>
+                                    <li class="color-1 bourder">0.0% <span style="margin-left: 15px;">PRANG GHAR</span><div class="arrow-down"></div></li>
+                                </ul>
+                                <div class="btn">
+                                    <div id="surveys_button_bottom" class="pressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Surveys</div>
+                                    <div id="teachers_button_bottom" class="unpressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Teachers</div>
+                                    <div id="students_button_bottom" class="unpressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Students</div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end of row 2-->
+        </div>
+    </div>
+    <!--/div-->
+</div>
+<div class="footer-section-wrapper section">
+    <div class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <img src="images/logo.svg" alt="KPEMA" style="max-width:50px;">
+                <p>© 2014-2026 Khyber Pakhtunkhwa Education Monitoring Authority (KPEMA)</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div id="logout-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" style="color:red;">Please logout before Leaving</h4>
+            </div>
+            <div class="modal-body">
+                <p>We Detect That you didn't use the dashboard for some time OR you are closing the dashboard tab, therefor we recommend that you logout by clicking the bellow button.</p>
+                <a href="logout.php" class="btn btn-primary btn-login">Click To Logout</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Modal Ends-->
+</div><!--Wrapper Ends-->
+<script>
+var isSettled=$("#isSettled").val();
+</script>
+<script src="js/provincedata-script-new.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(".toggle-dmo-password").click(function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
+<!--Do not load this script on add-monitor page because the copy & past buttons not working in mobile-->
+<script>
+/*Disable inspect Browser*/
+    window.onload = function () {
+     document.addEventListener("contextmenu", function (e) {
+     e.preventDefault();
+     }, false);
+     document.addEventListener("keydown", function (e) {
+     //document.onkeydown = function(e) {
+     // "I" key
+     if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+     disabledEvent(e);
+     }
+     // "J" key
+     if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+     disabledEvent(e);
+     }
+     // "S" key + macOS
+     if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+     disabledEvent(e);
+     }
+     // "U" key
+     if (e.ctrlKey && e.keyCode == 85) {
+     disabledEvent(e);
+     }
+     // "F12" key
+     if (e.keyCode == 123) {
+     disabledEvent(e);
+     }
+     }, false);
+     function disabledEvent(e) {
+     if (e.stopPropagation) {
+     e.stopPropagation();
+     } else if (window.event) {
+     window.event.cancelBubble = true;
+     }
+     e.preventDefault();
+     return false;
+     }
+     }
+</script>
+<!--Load Scripts for ASC Performa and Map page-->
+    <script src="js/schooldata-script.js"></script>
+<script src="js/script.js"></script>
+<!--Charts scripts-->
+    <script type="text/javascript" src="vendors/amcharts/amcharts.js"></script>
+    <script type="text/javascript" src="vendors/amcharts/pie.js"></script>
+    <script type="text/javascript" src="vendors/amcharts/funnel.js"></script>
+    <script type="text/javascript" src="vendors/amcharts/serial.js"></script>
+    <script type="text/javascript" src="vendors/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="vendors/highcharts/highcharts-more.js"></script>
+<!--Dashboard Scripts-->
+    <script>
+        /********************************************************************variable declaration and initializations***************************/
+        var surveydata ={"result":1,"totalsurveysdone":"117","schoolscount":"644","totalsurveypercentage":18.16770186335404,"totalboys":"73","totalgirls":"44","mosquecount":null,"primarycount":null,"middlecount":"73","highcount":"40","highseccount":"4","rural":"107","urban":"10","totalboyspercent":62.39316239316239,"totalgirlspercent":37.60683760683761,"mosquecountpercent":0,"primarycountpercent":0,"middlecountpercent":62.39316239316239,"highcountpercent":34.18803418803419,"highseccountpercent":3.418803418803419,"ruralpercent":91.45299145299145,"urbanpercent":8.547008547008547,"monthNumber":"08"};
+        var schoolStatusData ={"result":1,"totalschools":"117","openschools":"106","closedschools":"11","studentstaffabsent":"10","nonfunctionalschool":null,"openschoolspercentage":90.5982905982906,"closedschoolspercentage":9.401709401709402};
+        var TeacherPresenceData ={"result":1,"totalteachers":859,"absent":112,"percentage":12.993039443155451,"sanctionedleave":"59","unauthorizedabent":"45","latecomer":"3","onduty":"32","proxyteachers":0,"sancleavepercentage":43.38235294117647,"unauthorizedleavepercentage":33.088235294117645,"latecomerpercentage":2.2058823529411766,"ondutypercentage":23.52941176470588,"proxypercentage":"","absentruralpercentage":92.85714285714286,"absenturbanpercentage":7.142857142857142,"absentmalepercentage":61.60714285714286,"absentfemalepercentage":38.392857142857146};
+        var non_teacherPresence ={"result":1,"totalteachers":418,"absent":147,"percentage":35.16746411483253,"sanctionedleave":"19","unauthorizedabent":"120","latecomer":"7","onduty":"20","proxyteachers":0,"sancleavepercentage":11.949685534591195,"unauthorizedleavepercentage":75.47169811320755,"ondutypercentage":12.578616352201259,"absentruralpercentage":89.79591836734694,"absenturbanpercentage":10.204081632653061,"absentmalepercentage":78.2312925170068,"absentfemalepercentage":21.768707482993197};
+        var facilities ={"result":1,"totalschoolcount":"110","totalelectricityavailable":"83","totalelectricityfunctional":"62","totalwateravailable":"101","totalwaterfunctional":"96","totaltoiletavailable":"109","totaltoiletfunctional":"88","boundarywallavailable":"109","boundarywallfunctional":"98","buildingavailable":"107","playgroundavailable":"110","totalelectricityavailablepercentage":75.45454545454545,"totalelectricityfunctionalpercentage":56.36363636363636,"totalwateravailablepercentage":91.81818181818183,"totalwaterfunctionalpercentage":87.27272727272727,"totaltoiletavailablepercentage":99.0909090909091,"totaltoiletfunctionalpercentage":80,"boundarywallavailablepercentage":99.0909090909091,"boundarywallfunctionalpercentage":89.0909090909091,"buildingavailablepercentage":97.27272727272728,"playgroundavailablepercentage":100,"totalfacilitiespercentage":91.36363636363637};
+        var school_occupancy ={"result":1,"totalvisits":"2","totalschoolvisited":"1","totalschoolsurveyed":"117","totalADOVisits":"0","totalSDOVisits":"0","totalDOVisits":"1","totalschoolvisitedpercentage":0.8547008547008548,"totalurbanvisitedpercentage":200,"totalruralvisitedpercentage":0,"totalprimaryvisitedpercentage":0,"totalmosquevisitedpercentage":0,"totalmiddlevisitedpercentage":0,"totalhighvisitedpercentage":200,"totalhighsecondaryvisitedpercentage":0};
+        var students_attendance ={"result":1,"totalschools":"110","totalstudents":"12746","totalabsentstudents":5591,"totalabsentstudentspercent":43.86474187980543,"totalgirlsabsent":"778","totalboysabsent":"4813","totalgirlsabsentpercent":13.915220890717226,"totalboysabsentpercent":86.08477910928278,"mosqueabsent":null,"primaryabsent":null,"middleabsent":"1551","highabsent":"3588","highsecondaryabsent":"452","mosqueabsentpercent":0,"primaryabsentpercent":0,"middleabsentpercent":27.741012341262746,"highabsentpercent":64.17456626721517,"highsecondaryabsentpercent":8.08442139152209,"totalabsentstudentsurbanpercentage":13.410596026490065,"totalabsentstudentruralpercentage":86.58940397350993,"totalurbanabsent":"567","totalruralabsent":"3661"};
+        var villegalBuildingStatus ={"result":1,"totalschoolcount":null,"totalillegaloccupied":null,"totalpercentage":0,"whole":null,"part":null,"wholepercent":0,"partpercent":0,"teachersbyotherngo":"1"};
+        var school_without ={"withoutfreetextbookpercentage":0,"withoutstipendpercentage":0,"withoutteacherguidepercentage":0,"result":1};
+        var TopDistricts ={"result":1,"topStudentsArray":[{"districtname":"SAFI","percentage":"63.2"},{"districtname":"EKKA GHUND","percentage":"52.0"},{"districtname":"KHWEZAI","percentage":"39.9"},{"districtname":"PANDIALI","percentage":"37.9"},{"districtname":"AMBAR","percentage":"37.7"}],"topSurveysArray":[{"districtname":"SAFI","percentage":"0.0"},{"districtname":"PANDIALI","percentage":"0.0"},{"districtname":"AMBAR","percentage":"0.0"},{"districtname":"KHWEZAI","percentage":"0.0"},{"districtname":"PRANG GHAR","percentage":"0.0"}],"topTeachersArray":[{"districtname":"KHWEZAI","percentage":"20.6"},{"districtname":"HALIMZAI","percentage":"16.4"},{"districtname":"AMBAR","percentage":"13.8"},{"districtname":"SAFI","percentage":"13.2"},{"districtname":"EKKA GHUND","percentage":"11.2"}],"bottomStudentsArray":[{"districtname":"PRANG GHAR","percentage":"21.0"},{"districtname":"HALIMZAI","percentage":"37.0"},{"districtname":"AMBAR","percentage":"37.7"},{"districtname":"PANDIALI","percentage":"37.9"},{"districtname":"KHWEZAI","percentage":"39.9"}],"bottomSurveysArray":[{"districtname":"SAFI","percentage":"0.0"},{"districtname":"PANDIALI","percentage":"0.0"},{"districtname":"AMBAR","percentage":"0.0"},{"districtname":"KHWEZAI","percentage":"0.0"},{"districtname":"PRANG GHAR","percentage":"0.0"}],"bottomTeachersArray":[{"districtname":"PRANG GHAR","percentage":"7.8"},{"districtname":"PANDIALI","percentage":"9.1"},{"districtname":"EKKA GHUND","percentage":"11.2"},{"districtname":"SAFI","percentage":"13.2"},{"districtname":"AMBAR","percentage":"13.8"}],"district":"mohmand","tehsil":null,"ucs":null};
+        var selected_district ='mohmand';
+        var selectedDate ='Aug-2026';
+        var selectedTehsil ='';
+        var selectedUc ='';
+        var vacantTeachers={"result":1,"Primary":null,"Middle":null,"High":null,"Higher_Secondary":null,"total":"0"};
+        var singleTeacherSchools={"result":1,"Total_Schools":"117","Single_Teacher_Schools":"2"};
+        //console.log(vacantTeachers);
+        populate_tehsiles(selected_district, selectedDate, selectedTehsil,isSettled);
+        populate_ucs(selected_district, selectedTehsil, selectedUc, selectedDate);</script>
+    <script type="text/javascript" src="js/dashboard-scripts.js"></script><!--variables are declared above for these scripts,therefor do not change it's location-->
+            <!--Charts scripts-->
+
+</body></html>

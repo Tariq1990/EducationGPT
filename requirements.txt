@@ -10,3 +10,8 @@ plotly
 httpx
 openai
 python-dotenv
+imbalanced-learn
+requests
+beautifulsoup4
+playwright
+openpyxl

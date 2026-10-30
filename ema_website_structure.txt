@@ -1,0 +1,258 @@
+================================================================================
+KHYBER PAKHTUNKHWA EDUCATION MONITORING AUTHORITY (KPEMA / IMU)
+SYSTEM ARCHITECTURE, WEBSITE STRUCTURE, AND DATA SCHEMAS REFERENCE MANUAL
+================================================================================
+Target System: Khyber Pakhtunkhwa Education Monitoring Authority (KPEMA)
+Dashboard URL: http://175.107.63.44:81/imudashboard/index.php
+Authentication: HTTP POST Form Auth (username: dmo.<district>, password: <pass>)
+Primary Focus District (Default): Mohmand (dmo.mohmand)
+Reference Scope: Monitoring Cycles, Survey Paths, Indicator Metrics & Schemas
+================================================================================
+
+1. SYSTEM OVERVIEW & WORKFLOW ARCHITECTURE
+--------------------------------------------------------------------------------
+The KP Education Monitoring Authority (KPEMA), formerly the Independent Monitoring
+Unit (IMU), operates a centralized digital monitoring framework across all 
+settled and merged tribal districts of Khyber Pakhtunkhwa. Field Monitoring Officers 
+(FMOs/Monitors) conduct routine monthly visits using GPS-enabled mobile apps 
+to verify school functionality, teacher/staff presence, student enrollment, and 
+physical basic infrastructure. 
+
+Data flows into the central relational database, surfaced through the IMU Dashboard:
+- Monthly monitoring cycles run on a calendar basis (e.g., Aug-2026, Sep-2026).
+- Roster assignments define monthly inspection targets per monitor.
+- Re-visit protocols verify corrective actions on absent teachers or closed schools.
+- Annual School Census (ASC) data serves as the baseline for sanctioning posts, 
+  enrolment tracking, and infrastructure allocation.
+
+
+2. AUTHENTICATION & SESSION MANAGEMENT
+--------------------------------------------------------------------------------
+- Login URL: http://175.107.63.44:81/imudashboard/index.php
+- Method: POST
+- Form Payload:
+    username: <username>  (e.g., dmo.mohmand)
+    password: <password>  (e.g., imu@mohmand)
+- Session Cookies: PHPSESSID maintains authenticated session state.
+- Post-Login Landing Page: dashboard.php (Redirects or renders directly upon 200 OK).
+- Session Timeout Modal: Triggered on idle timer (`#logout-modal`, `logout.php`).
+
+
+3. DASHBOARD FILTER CONTROLS & QUERY SELECTORS
+--------------------------------------------------------------------------------
+The dashboard top control bar filters all downstream charts and report queries:
+- Form Name: `dashboard_serch` -> Action: `dashboard.php` (POST)
+- Form Fields:
+  1. `dashboard_date`: Month-Year string (Format: `M-YYYY`, e.g., `Aug-2026`).
+  2. `district`: District identifier slug (e.g., `mohmand`, `peshawar`, `swat`).
+  3. `thesil`: Tehsil dropdown populated via AJAX (`populate_tehsiles(...)`).
+     Key Mohmand Tehsils: SAFI, PANDIALI, AMBAR, KHWEZAI, PRANG GHAR, HALIMZAI, EKKA GHUND.
+  4. `ucs`: Union Council dropdown populated via AJAX (`populate_ucs(...)`).
+  5. `gender`: `Boys` | `Girls` | `` (Both).
+  6. `school_level`: `Mosque` | `Primary` | `Middle` | `High` | `Higher Secondary` | `` (All).
+  7. `isSettled`: Hidden field (`0` for Newly Merged Districts/NMD, `1` for Settled).
+
+
+4. EMBEDDED DASHBOARD DATA MODELS (JAVASCRIPT STATE VARIABLES)
+--------------------------------------------------------------------------------
+Upon loading `dashboard.php`, the backend injects real-time JSON state variables:
+
+A. `surveydata`:
+   - `totalsurveysdone`: Total schools surveyed in current month.
+   - `schoolscount`: Total target schools registered in district.
+   - `totalsurveypercentage`: Coverage percentage (`totalsurveysdone / schoolscount * 100`).
+   - `totalboys`, `totalgirls`: Gender breakdown counts.
+   - `rural`, `urban`: Locality counts and percentages.
+   - `mosquecount`, `primarycount`, `middlecount`, `highcount`, `highseccount`: Level counts.
+
+B. `schoolStatusData`:
+   - `totalschools`: Total surveyed schools evaluated.
+   - `openschools`, `closedschools`: Functioning vs locked/closed schools.
+   - `openschoolspercentage`, `closedschoolspercentage`.
+   - `studentstaffabsent`: Schools where both students and teachers are missing.
+   - `nonfunctionalschool`: Non-operational facilities.
+
+C. `TeacherPresenceData`:
+   - `totalteachers`: Total sanctioned/observed teaching staff count.
+   - `absent`: Total absent teachers.
+   - `percentage`: Overall teacher absence rate.
+   - `sanctionedleave`: Authorized leave count & percentage.
+   - `unauthorizedabent`: Un-authorized absence (disciplinary action trigger).
+   - `latecomer`: Late arrival count & percentage.
+   - `onduty`: Teachers deployed on other official duty (exams, election, census).
+   - `proxyteachers`: Discovered illegal substitute teachers.
+   - `absentruralpercentage`, `absenturbanpercentage`, `absentmalepercentage`, `absentfemalepercentage`.
+
+D. `non_teacherPresence`:
+   - Non-teaching staff presence, absence, unauthorized absence rate, on-duty metrics.
+
+E. `facilities`:
+   Evaluates 5 Essential Basic Facilities (Available vs Functional):
+   1. Electricity: `totalelectricityavailable`, `totalelectricityfunctional`
+   2. Water: `totalwateravailable`, `totalwaterfunctional`
+   3. Toilet: `totaltoiletavailable`, `totaltoiletfunctional`
+   4. Boundary Wall: `boundarywallavailable`, `boundarywallfunctional`
+   5. Building: `buildingavailable`
+   6. Playground: `playgroundavailable`
+   - `totalfacilitiespercentage`: Composite infrastructure functionality index.
+
+F. `students_attendance`:
+   - `totalstudents`: Total enrollment in surveyed schools.
+   - `totalabsentstudents`: Absent student headcount.
+   - `totalabsentstudentspercent`: Student absenteeism rate.
+   - Gender breakdowns: `totalgirlsabsent`, `totalboysabsent` (% and count).
+   - Level breakdowns: `middleabsent`, `highabsent`, `highsecondaryabsent`.
+   - Locality breakdowns: `totalurbanabsent`, `totalruralabsent`.
+
+G. `vacantTeachers` & `singleTeacherSchools`:
+   - Vacant posts across Primary, Middle, High, and Higher Secondary levels.
+   - `singleTeacherSchools`: Schools running with only 1 teacher (critical vulnerability).
+
+H. `villegalBuildingStatus`:
+   - `whole`: Wholly illegally occupied school buildings.
+   - `part`: Partially illegally occupied school premises.
+   - `teachersbyotherngo`: Staff appointed by external bodies.
+
+I. `TopDistricts` / `TopTehsils`:
+   - Comparative ranking of tehsils/districts across Surveys, Teachers, and Students attendance.
+
+
+5. FULL REPORTING DIRECTORY & URL QUERY SCHEMAS
+--------------------------------------------------------------------------------
+All deep drill-down reports follow the standardized HTTP GET parameter schema:
+Endpoint: `reports.php?r=<report_slug>&districtCommaSep=<district>&reports_start_date=<date_range>`
+Example: `reports.php?r=basic-facilities&districtCommaSep=mohmand&reports_start_date=08-01-2026 - 08-30-2026`
+
+REPORT CATEGORIES & SLUGS:
+
+A. SURVEYS
+- `monitor-wise-survey-done`: Surveys completed per individual monitoring officer.
+- `monitor-wise-coverage`: Target vs visited coverage percentage by officer.
+- `roaster-assignment`: Monthly inspection schedule assigned to each monitor.
+- `school-not-surveyed`: List of schools missed during the active monitoring cycle.
+- `monitor-daily-visits`: Daily log of geo-tagged school visits.
+- `survey-done`: Aggregate list of surveyed schools with timestamps.
+- `survey-timing-report`: Arrival and departure timestamps logged at each school.
+
+B. SCHOOLS
+- `closed-schools`: Detailed list of schools found closed during visits with reasons.
+- `partially-occupied-schools`: Schools with unauthorized partial occupation.
+- `wholly-occupied-schools`: Schools fully occupied by unauthorized entities.
+- `building-availability`: Ownership and physical building existence verification.
+- `basic-facilities`: Detailed matrix of water, electricity, toilet, and boundary wall status.
+- `adminisrative-visits`: Visits logged by ADO, SDO, and District Education Officers (DEO).
+- `schoolleaders-visits`: Academic and instructional mentoring visits by School Leaders.
+- `ptc-council`: Parent Teacher Council functionality, bank account status, and meetings.
+- `single-teacher`: Schools with single teacher deployment.
+
+C. ENROLLMENT / BOOKS
+- `ftb-new-application`: Free Text Books delivery, requirement, and shortfall tracking.
+- `class-wise-enrollment`: Grade-by-grade enrollment roster (Nursery to Class 12).
+- `enrollment-gap`: Retention and drop-out analysis between consecutive grades.
+- `stipend`: Stipend distribution verification for female students.
+- `new-enrollment`: New admissions logged in the ongoing academic year.
+
+D. TEACHING STAFF
+- `absent-teaching-staff-unauth`: Un-authorized absent teachers flagged for salary deduction.
+- `teaching-staff-attendance`: Comprehensive attendance ledger for teachers.
+- `vacant-posts`: Unfilled sanctioned teaching posts by designation.
+- `teacher-wrong-posting`: Teachers posted against mismatched subjects or cadres.
+- `teachers-appointed-by-otherorg`: Teachers hired by NGOs, PTC, or partner projects.
+- `teacher-search.php`: Direct search tool by CNIC, Personal No, or Teacher Name.
+
+E. NON TEACHING STAFF
+- `absent-non-teaching-staff-unauth`: Un-authorized absence of lab assistants, peons, chowkidars.
+- `non-teaching-staff-attendance`: Non-teaching attendance register.
+- `vacant-nonteaching-staff`: Unfilled non-teaching sanctioned posts.
+- `non-teacher-search.php`: Direct search for non-teaching staff by CNIC or Name.
+
+F. REVISITS
+- `teaching-staff-attendance-revisit`: Secondary visit verification of teacher attendance.
+- `absent-teaching-staff-unauth-revisit`: Revisit confirmation of unauthorized absence.
+- `non-teaching-staff-attendance-revisit`: Secondary verification of non-teaching staff.
+- `absent-nonteaching-staff-unauth-revisit`: Revisit confirmation of non-teaching absence.
+- `school-revisit`: General follow-up visit to closed or disputed schools.
+- `student-enrollment-revisit`: Headcount verification to eliminate ghost students.
+
+G. GCS SCHOOLS (Government Community Schools)
+- `gcs-schools-information`: Profile of community-managed schools.
+- `gcs-student-attendance`: Community school student attendance rates.
+- `gcs-teacher-attendance`: Community school teacher attendance logs.
+
+H. PROXY STAFF
+- `proxy-staff`: Discovered proxy staff cases (persons teaching in place of appointed teachers).
+
+I. ASC (Annual School Census) INTEGRATION
+- `furniture`: Student desks, chairs, and teacher furniture requirements vs available.
+- `infrastructure`: Classroom condition (Pakka/Kacha), land area, covered area.
+- `sanctioned-filled-teaching-staff`: Complete census of sanctioned, filled, and vacant teaching posts.
+- `sancioned-filled-non-teaching-staff`: Census of non-teaching posts.
+- `classwise-enrollment`: Annual census class-wise student strength.
+- `census-teacherInfo`: Qualifications (BPS, academic degree, professional certification).
+- `census-nonteacherInfo`: Non-teacher demographic and grade details.
+- `census-agewise-enrollment`: Age vs grade appropriateness and over-age student counts.
+- `census-disabled-students`: Special needs and disability categorization.
+- `census-ptc-info`: PTC committee formation, account balance, and annual fund receipt.
+
+J. DOUBLE SHIFT SCHOOLS (DSS)
+- `dss-teachers`: Teachers deployed in morning vs afternoon shifts.
+- `dss-nonteachers`: Shift staff allocations.
+- `dss-schoolvisits`: Shift monitoring visits.
+- `dss-stdenrollment`: Afternoon shift student attendance and enrollment.
+
+K. SPECIAL TASK & DISASTER MONITORING
+- `schools-list.php`: Flood-affected and disaster-damaged schools.
+- `specialTaskSurvey-done`: Specific infrastructure rehabilitation surveys.
+- `specialTaskClassRooms`: Classroom reconstruction tracking.
+- `specialTaskEnrollment`: Post-disaster student return rates.
+- `specialTaskExistingFurniture` & `specialTaskNewFurniture`: Emergency furniture provision.
+- `specialTaskPTCFund`: Emergency grant utilization from PTC accounts.
+- `PTCUnspentAmount`: Analysis of idle government funds sitting in unspent PTC accounts.
+
+
+6. LOCAL WORKSPACE DATASET CROSS-REFERENCE
+--------------------------------------------------------------------------------
+The local workspace `data/raw/` maps directly to the EMA system reports as follows:
+
+Local File Name                             EMA Dashboard Equivalent Report Slug
+--------------------------------------------------------------------------------
+Basic Facilities (1).xlsx               ->  reports.php?r=basic-facilities
+Infrastructure.xlsx                     ->  reports.php?r=infrastructure
+Sanctioned Filled Teaching Staff.xlsx   ->  reports.php?r=sanctioned-filled-teaching-staff
+Sancioned Filled Non Teaching Staff.xlsx->  reports.php?r=sancioned-filled-non-teaching-staff
+Classwise Enrollment.xlsx               ->  reports.php?r=classwise-enrollment
+Census TeacherInfo.xlsx                 ->  reports.php?r=census-teacherInfo
+Census NonteacherInfo.xlsx              ->  reports.php?r=census-nonteacherInfo
+Census Ptc Info.xlsx                    ->  reports.php?r=census-ptc-info & PTCUnspentAmount
+Census It Lab.xlsx                      ->  IT Lab functionality tracking
+Census Disabled Students.xlsx           ->  reports.php?r=census-disabled-students
+Furniture (1).xlsx                      ->  reports.php?r=furniture & GetFurnitureComparison
+dashboard_page_*.html                   ->  Live snapshot of dashboard.php state JSONs
+
+
+7. KEY PERFORMANCE INDICATORS (KPIs) & CALCULATION STANDARDS
+--------------------------------------------------------------------------------
+1. Student-to-Teacher Ratio (STR):
+   STR = Total Enrolled Students / Total Present (or Filled) Teachers
+   Standard Threshold: Ideal <= 40:1. Critical > 50:1.
+
+2. Student-to-Classroom Ratio (SCR):
+   SCR = Total Enrolled Students / Number of Pakka (Permanent) Classrooms
+   Standard Threshold: Ideal <= 45:1. Critical > 60:1.
+
+3. Teacher Unauthorized Absence Rate:
+   Unauth Absent Rate = (Unauthorized Absent Teachers / Total Sanctioned Posts) * 100
+   Red Flag: > 5% triggers disciplinary alert.
+
+4. Basic Facilities Functionality Index (BFFI):
+   BFFI = (Electricity_Func + Water_Func + Toilet_Func + BoundaryWall_Func + Building_Func) / 5
+   Scored from 0.0 to 1.0 (or 0% to 100%).
+
+5. Single Teacher School Risk:
+   Any Primary or Middle school with single teacher serving multiple grades is classified 
+   as HIGH VULNERABILITY regardless of enrollment size.
+
+6. PTC Fund Utilization Efficiency:
+   Utilization Rate = (Expenditure) / (Opening Balance + Government Grant Received)
+   Idle Fund Risk: Present Balance > PKR 100,000 while basic facility deficits exist.
+================================================================================

@@ -7,6 +7,8 @@ import sys
 import subprocess
 import shutil
 import re
+import uuid
+import random
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -15,6 +17,7 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from src.local_rag import LocalRAGAdvisor, build_local_documents, load_documents
+from src.db_manager import init_db, log_chat_message, get_chat_history, get_db_path, get_recent_predictions
 
 # Load environment variables
 load_dotenv()
@@ -26,6 +29,14 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Initialize Database on app load
+db_path = get_db_path()
+init_db(db_path)
+
+# Initialize Session ID for chat history persistence
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
 
 # --- PWA & Mobile Optimization ---
 st.markdown("""
@@ -152,7 +163,15 @@ local_rag_top_k = int(os.getenv("LOCAL_RAG_TOP_K", "5"))
 local_rag_min_score = float(os.getenv("LOCAL_RAG_MIN_SCORE", "0.08"))
 
 DATA_PATH = os.getenv("PROCESSED_CSV_PATH", os.path.join("data", "processed", "processed_school_data.csv"))
-API_URL = os.getenv("PREDICT_API_URL", "http://localhost:8000/predict")
+
+# Resolve API URLs dynamically using base URL
+API_BASE = os.getenv("PREDICT_API_URL", "http://localhost:8000/predict").replace("/predict", "")
+API_URL = f"{API_BASE}/predict"
+API_FEEDBACK_URL = f"{API_BASE}/predict/feedback"
+API_DRIFT_URL = f"{API_BASE}/monitoring/drift"
+API_STATS_URL = f"{API_BASE}/monitoring/stats"
+API_HISTORY_URL = f"{API_BASE}/metrics/history"
+
 RAG_INDEX_PATH = os.getenv("RAG_INDEX_PATH", os.path.join("data", "processed", "rag_chunks.json"))
 if not os.path.isabs(RAG_INDEX_PATH):
     RAG_INDEX_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, RAG_INDEX_PATH))
@@ -161,7 +180,7 @@ model_choice = None
 # --- Sidebar Navigation ---
 with st.sidebar:
     st.markdown('<p class="sidebar-title">EduSmart AI</p>', unsafe_allow_html=True)
-    page = st.radio("Navigation", ["Dashboard & Analytics", "AI Advisor (Chat)"], label_visibility="collapsed")
+    page = st.radio("Navigation", ["Dashboard & Analytics", "AI Advisor (Chat)", "Model Health & Monitoring"], label_visibility="collapsed")
     
     st.divider()
     if page == "AI Advisor (Chat)":
@@ -185,11 +204,13 @@ with st.sidebar:
             )
             st.caption(f"Local LLM: {model_choice}")
         if st.button("New Chat", use_container_width=True):
+            # Delete history for this session by assigning a new session ID
+            st.session_state.session_id = str(uuid.uuid4())
             st.session_state.messages = []
             st.rerun()
     
     st.sidebar.markdown("---")
-    st.sidebar.caption("v2.2.0 | Premium Edition")
+    st.sidebar.caption("v3.0.0 | Enterprise Edition")
 
 # --- Functions ---
 def load_data():
@@ -330,6 +351,47 @@ def boost_district_chunk(query, df, rag, chunks):
             break
     return chunks
 
+# Populate 10 simulated predictions in database for testing
+def simulate_predictions(df_source):
+    if df_source is None:
+        return
+    st.write("Simulating predictions...")
+    for _ in range(10):
+        row = df_source.sample(n=1).iloc[0]
+        teachers = max(0.0, float(row.get("total_teachers", 3) + random.randint(-1, 2)))
+        rooms = max(0.0, float(row.get("No of Pakka Class Rooms", 4) + random.randint(-1, 1)))
+        balance = max(0.0, float(row.get("Presentbalance", 1500) * random.uniform(0.7, 1.3)))
+        covered = max(0.0, float(row.get("Covered_Area", 200) * random.uniform(0.9, 1.1)))
+        desks = max(0.0, float(row.get("Desks Two Seater Useable", 20) + random.randint(-5, 5)))
+        fans = max(0.0, float(row.get("Fans Useable", 10) + random.randint(-2, 2)))
+        
+        payload = {
+            "Gender": str(row.get("Gender", "Boys")),
+            "LEVEL": str(row.get("LEVEL", "Primary")),
+            "District": str(row.get("District", "PESHAWAR")),
+            "BuildingOwnerShip": "Govt",
+            "TotalLand_Allocated": 500,
+            "Covered_Area": covered,
+            "UnCovered_Area": 300,
+            "No_of_Pakka_Class_Rooms": rooms,
+            "No_Of_Pakka_Other_Rooms": 2,
+            "Desks_Two_Seater_Useable": desks,
+            "Tablet_Chairs_Useable": 50,
+            "Fans_Useable": fans,
+            "total_teachers": teachers,
+            "avg_bps_teachers": 14,
+            "qualified_teachers": 1,
+            "total_non_teachers": 2,
+            "Presentbalance": balance,
+            "Fund_Recieved_from_Govt_in_This_Year": 2000
+        }
+        try:
+            requests.post(API_URL, json=payload, timeout=5)
+        except Exception as e:
+            st.error(f"Failed to post mock prediction: {e}")
+            return
+    st.success("Successfully generated 10 simulated predictions in the SQLite database!")
+
 # --- Main Page Execution ---
 df = load_data()
 if "local_rag" not in st.session_state:
@@ -337,7 +399,18 @@ if "local_rag" not in st.session_state:
 if st.session_state.get("local_rag") is None and df is not None:
     st.session_state.local_rag = build_local_rag(df)
 
-# Client is already configured globally if API key exists
+# Initialize Session Chat Messages from SQLite DB
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+    try:
+        db_messages = get_chat_history(db_path, st.session_state.session_id)
+        for msg in db_messages:
+            st.session_state.messages.append({
+                "role": msg["role"],
+                "content": msg["content"]
+            })
+    except Exception as e:
+        print(f"Error loading chat history from SQLite: {e}")
 
 if page == "Dashboard & Analytics":
     st.markdown('<h1 class="main-header">School Resource Insights</h1>', unsafe_allow_html=True)
@@ -409,7 +482,7 @@ if page == "Dashboard & Analytics":
             st.dataframe(filtered_df[available_cols], use_container_width=True, height=320)
             
         # Prediction Form (Collapsible)
-        with st.expander("Infrastructure Shortage Prediction Tool"):
+        with st.expander("Infrastructure Shortage Prediction Tool", expanded=True):
             st.markdown("Enter school stats to predict if it will fall into the 'Critical' category.")
             with st.form("pred_form"):
                 c1, c2, c3 = st.columns(3)
@@ -430,31 +503,90 @@ if page == "Dashboard & Analytics":
                     desks = st.number_input("Useable Desks", min_value=0, value=20)
                     fans = st.number_input("Useable Fans", min_value=0, value=10)
                 
-                if st.form_submit_button("Generate Prediction", use_container_width=True):
-                    payload = {
-                        "Gender": gender, "LEVEL": level_in, "District": dist_in.upper(),
-                        "BuildingOwnerShip": "Govt", "TotalLand_Allocated": 500,
-                        "Covered_Area": covered, "UnCovered_Area": 300,
-                        "No_of_Pakka_Class_Rooms": pakka_rooms, "No_Of_Pakka_Other_Rooms": 2,
-                        "Desks_Two_Seater_Useable": desks, "Tablet_Chairs_Useable": 50,
-                        "Fans_Useable": fans, "total_teachers": teachers,
-                        "avg_bps_teachers": 14, "qualified_teachers": 1,
-                        "total_non_teachers": 2, "Presentbalance": ptc_bal,
-                        "Fund_Recieved_from_Govt_in_This_Year": 2000
-                    }
-                    try:
-                        response = requests.post(API_URL, json=payload, timeout=5)
-                        if response.status_code == 200:
-                            res = response.json()
-                            st.session_state['last_prediction'] = {**payload, **res}
+                generate_pred = st.form_submit_button("Generate Prediction", use_container_width=True)
+                
+            if generate_pred:
+                payload = {
+                    "Gender": gender, "LEVEL": level_in, "District": dist_in.upper(),
+                    "BuildingOwnerShip": "Govt", "TotalLand_Allocated": 500,
+                    "Covered_Area": covered, "UnCovered_Area": 300,
+                    "No_of_Pakka_Class_Rooms": pakka_rooms, "No_Of_Pakka_Other_Rooms": 2,
+                    "Desks_Two_Seater_Useable": desks, "Tablet_Chairs_Useable": 50,
+                    "Fans_Useable": fans, "total_teachers": teachers,
+                    "avg_bps_teachers": 14, "qualified_teachers": 1,
+                    "total_non_teachers": 2, "Presentbalance": ptc_bal,
+                    "Fund_Recieved_from_Govt_in_This_Year": 2000
+                }
+                try:
+                    response = requests.post(API_URL, json=payload, timeout=5)
+                    if response.status_code == 200:
+                        res = response.json()
+                        st.session_state['last_prediction'] = {**payload, **res}
+                        
+                        st.divider()
+                        # Render visual feedback card
+                        pred_col1, pred_col2 = st.columns([1, 2])
+                        with pred_col1:
+                            st.write("### Prediction Result")
+                            prob_critical = res['probability'][1]
+                            
                             if res['is_critical'] == 1:
-                                st.error(f"CRITICAL SHORTAGE DETECTED (Probability: {res['probability'][1]:.2%})")
+                                st.error(f"🔴 **CRITICAL RESOURCE SHORTAGE**\n\nProbability: {prob_critical:.1%}")
                             else:
-                                st.success(f"NORMAL STATUS (Probability: {res['probability'][0]:.2%})")
+                                st.success(f"🟢 **NORMAL STATUS**\n\nProbability: {res['probability'][0]:.1%}")
+                                
                             if "threshold" in res:
-                                st.caption(f"Decision threshold in use: {res['threshold']:.2f}")
-                        else: st.error(f"API Error: {response.text}")
-                    except: st.error("Connection Error: Is the API server running?")
+                                st.caption(f"Decision threshold: {res['threshold']:.2f}")
+                                
+                            # Feed back audit log interface
+                            if res.get("prediction_id"):
+                                st.write("#### Was this prediction accurate?")
+                                f_ok, f_err = st.columns(2)
+                                with f_ok:
+                                    if st.button("👍 Correct", key="feed_corr"):
+                                        requests.post(API_FEEDBACK_URL, json={"prediction_id": res["prediction_id"], "feedback": "Correct"})
+                                        st.toast("Registered as Correct prediction!")
+                                with f_err:
+                                    if st.button("👎 Incorrect", key="feed_incorr"):
+                                        requests.post(API_FEEDBACK_URL, json={"prediction_id": res["prediction_id"], "feedback": "Incorrect"})
+                                        st.toast("Registered as Incorrect prediction!")
+                        
+                        with pred_col2:
+                            # Render local explanation bar chart
+                            contribs = res.get("explanation", {})
+                            if contribs:
+                                df_contrib = pd.DataFrame([
+                                    {"Feature": f, "Contribution": float(val)}
+                                    for f, val in contribs.items()
+                                    if abs(val) > 1e-4
+                                ])
+                                if not df_contrib.empty:
+                                    df_contrib = df_contrib.head(10)
+                                    df_contrib["Impact"] = df_contrib["Contribution"].apply(
+                                        lambda x: "Increases Shortage Risk (Red)" if x > 0 else "Reduces Shortage Risk (Green)"
+                                    )
+                                    fig_exp = px.bar(
+                                        df_contrib,
+                                        x="Contribution",
+                                        y="Feature",
+                                        color="Impact",
+                                        orientation="h",
+                                        color_discrete_map={
+                                            "Increases Shortage Risk (Red)": "#ef4444",
+                                            "Reduces Shortage Risk (Green)": "#10b981"
+                                        },
+                                        title="Why did the AI make this decision? (Feature Contributions)",
+                                        template="plotly_dark"
+                                    )
+                                    fig_exp.update_layout(yaxis={"categoryorder": "total ascending"}, margin=dict(l=20, r=20, t=40, b=20))
+                                    st.plotly_chart(fig_exp, use_container_width=True)
+                            else:
+                                st.info("No feature explanation contributions generated.")
+                                
+                    else:
+                        st.error(f"API Error: {response.text}")
+                except Exception as e:
+                    st.error(f"Connection Error: Is the API server running? Details: {e}")
 
     else:
         st.warning("Data source not found. Please ensure `processed_school_data.csv` is correctly generated.")
@@ -477,9 +609,6 @@ elif page == "AI Advisor (Chat)":
         model_choice = ollama_model if use_local_llm else "gemini-2.5-flash"
 
     # Chat UI
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-
     # Container for messages
     chat_container = st.container()
 
@@ -490,7 +619,10 @@ elif page == "AI Advisor (Chat)":
 
     # Input area
     if prompt := st.chat_input("Ask about resource shortages, planning, or prediction results..."):
+        # Log and append User message
         st.session_state.messages.append({"role": "user", "content": prompt})
+        log_chat_message(db_path, st.session_state.session_id, "user", prompt, model_name=model_choice)
+        
         with chat_container:
             with st.chat_message("user"):
                 st.markdown(prompt)
@@ -598,6 +730,135 @@ elif page == "AI Advisor (Chat)":
                 
                 response_placeholder.markdown(full_res)
                 st.session_state.messages.append({"role": "assistant", "content": full_res})
+                # Log Assistant response
+                log_chat_message(db_path, st.session_state.session_id, "assistant", full_res, model_name=model_choice)
 
+elif page == "Model Health & Monitoring":
+    st.markdown('<h1 class="main-header">Model Health & Monitoring</h1>', unsafe_allow_html=True)
+    
+    # 1. Fetch statistics from API Server
+    try:
+        stats_response = requests.get(API_STATS_URL, timeout=3)
+        if stats_response.status_code == 200:
+            stats = stats_response.json()
+            
+            c_kpi1, c_kpi2, c_kpi3 = st.columns(3)
+            c_kpi1.metric("Prediction volume (SQLite)", stats["total_predictions"])
+            
+            crit_ratio = (stats["critical_count"] / stats["total_predictions"] * 100) if stats["total_predictions"] > 0 else 0.0
+            c_kpi2.metric("Critical Prediction Ratio", f"{crit_ratio:.1f}%", f"{stats['critical_count']} flagged")
+            
+            acc_str = f"{stats['feedback_accuracy'] * 100:.1f}%" if stats["feedback_count"] > 0 else "N/A"
+            c_kpi3.metric("Prediction Accuracy (Audited)", acc_str, f"{stats['feedback_count']} feedbacks logged")
+        else:
+            st.warning("Failed to load statistics from API Server.")
+            stats = None
+    except Exception as e:
+        st.error(f"Could not connect to API Server statistics endpoint: {e}")
+        stats = None
 
+    # 2. Live Feature Drift Analysis
+    st.divider()
+    st.write("## Feature Drift Analysis (KS-Test)")
+    st.write("This tool checks if the feature distributions of incoming real-time predictions deviate from the original training dataset using a Kolmogorov-Smirnov test.")
+    
+    try:
+        drift_response = requests.get(API_DRIFT_URL, timeout=5)
+        if drift_response.status_code == 200:
+            drift_data = drift_response.json()
+            
+            if drift_data.get("status") == "awaiting_data":
+                st.info(f"ℹ️ {drift_data['message']}")
+                
+                # Option to simulate predictions
+                if st.button("🧪 Populate 10 Simulated Predictions", use_container_width=True):
+                    if df is not None:
+                        simulate_predictions(df)
+                        st.rerun()
+                    else:
+                        st.error("Processed school CSV data is required to run simulation.")
+            
+            elif drift_data.get("status") == "success":
+                st.success("✅ Drift check calculated successfully.")
+                
+                # Format into table
+                table_rows = []
+                for feat, res in drift_data["metrics"].items():
+                    status_text = "🚨 DRIFTED" if res["is_drifted"] else "🟢 STABLE"
+                    table_rows.append({
+                        "Feature": feat,
+                        "KS Statistic": round(res["ks_statistic"], 4),
+                        "P-value": round(res["p_value"], 5),
+                        "Baseline Mean": round(res["baseline_mean"], 2),
+                        "Real-Time Mean": round(res["target_mean"], 2),
+                        "Status": status_text
+                    })
+                
+                st.dataframe(pd.DataFrame(table_rows), use_container_width=True)
+                
+                # Visual comparison chart
+                st.write("### Overlay Feature Distribution")
+                vis_feat = st.selectbox("Select Feature to Visualize Distribution Comparison", [r["Feature"] for r in table_rows])
+                
+                # Fetch recent predictions for target
+                preds = get_recent_predictions(db_path, limit=1000)
+                target_df = pd.DataFrame(preds)
+                
+                if df is not None and not target_df.empty:
+                    # Map UI feature to database column
+                    db_map = {
+                        "total_teachers": "total_teachers",
+                        "No of Pakka Class Rooms": "pakka_class_rooms",
+                        "Presentbalance": "present_balance",
+                        "Covered_Area": "covered_area",
+                        "Desks Two Seater Useable": "usable_desks",
+                        "Fans Useable": "usable_fans"
+                    }
+                    
+                    db_col = db_map.get(vis_feat, vis_feat)
+                    
+                    df_base = pd.DataFrame({vis_feat: df[vis_feat].dropna(), "Dataset": "Baseline (Training)"})
+                    df_target = pd.DataFrame({vis_feat: target_df[db_col].dropna(), "Dataset": "Real-time (Production)"})
+                    
+                    combined = pd.concat([df_base, df_target])
+                    fig_drift = px.histogram(
+                        combined, x=vis_feat, color="Dataset", barmode="overlay",
+                        marginal="box", title=f"Distribution Comparison for {vis_feat}",
+                        template="plotly_dark", color_discrete_sequence=["#10b981", "#ef4444"]
+                    )
+                    st.plotly_chart(fig_drift, use_container_width=True)
+            else:
+                st.error(f"Error returned by Drift Monitor: {drift_data.get('message')}")
+        else:
+            st.error(f"Failed to fetch drift report: HTTP {drift_response.status_code}")
+    except Exception as e:
+        st.error(f"Could not connect to drift API endpoint: {e}")
 
+    # 3. Model Metrics & Historic Training Runs
+    st.divider()
+    st.write("## Model Training Run Metrics")
+    st.write("History of RandomForest training runs and evaluation scores saved in the SQLite database:")
+    
+    try:
+        history_response = requests.get(API_HISTORY_URL, timeout=3)
+        if history_response.status_code == 200:
+            hist_rows = history_response.json()
+            if hist_rows:
+                df_hist = pd.DataFrame(hist_rows)
+                df_hist = df_hist.rename(columns={
+                    "timestamp": "Timestamp",
+                    "accuracy": "Accuracy",
+                    "f1_score": "F1 Score",
+                    "macro_f1_score": "Macro F1 Score",
+                    "decision_threshold": "Decision Threshold",
+                    "imbalance_strategy": "Imbalance Strategy"
+                })
+                # Reorder
+                keep_cols = ["Timestamp", "Imbalance Strategy", "Accuracy", "F1 Score", "Macro F1 Score", "Decision Threshold"]
+                st.dataframe(df_hist[[c for c in keep_cols if c in df_hist.columns]], use_container_width=True)
+            else:
+                st.info("No model training records found in the database. Run `src/train_model.py` to record metrics.")
+        else:
+            st.warning("Failed to load training run history.")
+    except Exception as e:
+        st.error(f"Could not connect to API history endpoint: {e}")
