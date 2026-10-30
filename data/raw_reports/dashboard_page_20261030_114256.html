@@ -1,0 +1,562 @@
+<!DOCTYPE html><html class="no-js">    <head>        <meta charset="utf-8">        <title>KPEMA | Dashboard</title>        <meta name="viewport" content="width=device-width, initial-scale=1">        <link rel="shortcut icon" href="images/kpklogo.ico" />        <link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">        <link href="css/font-awesome.min.css" rel="stylesheet">        <link id="default-style" href="css/dashboard-style.css" rel="stylesheet">        <link rel="stylesheet" href="css/jquery-ui.min.css">        <script src="js/jquery-1.12.4.min.js"></script>        <script src="js/jquery-ui.min.js"></script>        <link rel="stylesheet" href="css/datepicker.min.css">        <script src="js/bootstrap-datepicker.min.js"></script>                        <!-- end: CSS -->        <script type="text/javascript">            $(window).load(function () {                $(".loader").fadeOut("slow");            });        </script>        <!--Charts scripts-->            </head>    <body class="class-dashboard">        <input type="hidden" name="isSettled" id="isSettled" value="0">        <div class="loader"></div>        <nav class="navbar navbar-default nav-top navbar-static-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                <span class="logo-img">
+                    <img src="images/logo.svg" alt="KPEMA" style="max-width:77px;width:100%;">
+                </span>
+            </a>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                                                              <li  class="dropdown active">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+                      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                      <li><a href="dashboard.php">Home</a></li>
+                                       </ul>
+                    </li>
+                    
+                    
+                     
+                    
+                     <!--li ><a href="map.php">Map</a></li-->
+                                         <li class="dropdown ">
+                        <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location Tracker  <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li>
+                             <a href="schools-on-map.php">Schools</a>   
+                            </li>  
+                            <li>
+                             <a  href="districts.php">Tracker</a>   
+                            </li>  
+                             <li>
+                             <a  href="daily-visits.php">Daily Visits Tracker</a>   
+                            </li> 
+                        </ul>
+                    </li>
+                                         <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Surveys</a>
+                                <ul class="dropdown-menu">
+                                                                       <li><a href="reports.php?r=monitor-wise-survey-done&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Monitor Wise Survey Done</a></li>
+                                    <li><a href="reports.php?r=monitor-wise-coverage&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Monitor Wise Coverage</a></li>
+                                     <li><a href="reports.php?r=roaster-assignment&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Roaster Assignment</a></li>
+                                    <li><a href="reports.php?r=school-not-surveyed&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">School Not Surveyed</a></li>
+                                        <li><a href="reports.php?r=monitor-daily-visits&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Monitor Wise Daily Visits</a></li> 
+                                                                           <li><a href="reports.php?r=survey-done&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Survey Done</a></li>
+                                   <li><a href="reports.php?r=survey-timing-report&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Survey Timing Report</a></li>
+                                    
+                                </ul>
+                            </li>
+                              <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Schools</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=closed-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Closed Schools</a></li>
+                                                                        <li><a href="reports.php?r=partially-occupied-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Partially Occupied Schools</a></li>
+                                      <li><a href="reports.php?r=wholly-occupied-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Wholly Occupied Schools</a></li>
+                                       <li><a href="reports.php?r=building-availability&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Building Availability</a></li>
+                                        <li><a href="reports.php?r=basic-facilities&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Basic Facilities</a></li>
+                                         <li><a href="reports.php?r=adminisrative-visits&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Administrative Visits</a></li>
+                                          <li><a href="reports.php?r=schoolleaders-visits&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">School Leaders Visits</a></li>
+                                          <li><a href="reports.php?r=ptc-council&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Parent Teacher Council (PTC)</a></li>
+										  <li><a href="reports.php?r=single-teacher&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Single Teacher Schools</a></li>
+                                   </ul>
+                            </li>
+                               <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Enrollment/Books</a>
+                                <ul class="dropdown-menu">
+                                                                        <li><a href="reports.php?r=ftb-new-application&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">FTB New Application</a></li>
+                                    <li><a href="reports.php?r=class-wise-enrollment&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Class Wise Enrollment</a></li>
+                                      <li><a href="reports.php?r=enrollment-gap&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Enrollment Gap</a></li>
+					<li><a href="reports.php?r=stipend&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Stipend</a></li>
+                                        <li><a href="reports.php?r=new-enrollment&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">New Enrollment</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Teaching Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=absent-teaching-staff-unauth&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Absent Teaching Staff (Un-authorised)</a></li>
+                                    <li><a href="reports.php?r=teaching-staff-attendance&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Teaching Staff Attendance</a></li>
+                                 <li><a href="reports.php?r=vacant-posts&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Vacant Posts</a></li>
+                                 <li><a href="reports.php?r=teacher-wrong-posting&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Teachers On Wrong Posts</a></li>
+                                                                   <li><a href="reports.php?r=teachers-appointed-by-otherorg&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Teachers Appointed by PTC or Other org</a></li>
+                                                                  <li><a href="teacher-search.php">Search Teacher</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Non Teaching Staff</a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li><a href="reports.php?r=absent-non-teaching-staff-unauth&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Absent Non Teaching Staff (Un-authorised)</a></li>
+                                    
+                                    <li><a href="reports.php?r=non-teaching-staff-attendance&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Non Teaching Staff Attendance</a></li>
+                                    <li><a href="reports.php?r=vacant-nonteaching-staff&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Vacant Non Teaching Staff</a></li>
+                                 <li><a href="non-teacher-search.php">Search Non-Teacher</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Revisits</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=teaching-staff-attendance-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Teaching Staff Attendance (Revisit)</a></li>
+                                    <li><a href="reports.php?r=absent-teaching-staff-unauth-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Absent Teaching Staff (Un-authorised) Revisit</a></li>
+                                    <li><a href="reports.php?r=non-teaching-staff-attendance-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Non Teaching Staff Attendance (Revisit)</a></li>
+                                    <li><a href="reports.php?r=absent-nonteaching-staff-unauth-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Absent Non Teaching Staff (Un-authorised) Revisit</a></li>
+                                    <li><a href="reports.php?r=school-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">School Revisit</a></li>
+                                     <li><a href="reports.php?r=student-enrollment-revisit&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Student Enrollment (Revisit)</a></li>
+                                </ul>
+                            </li>
+                              <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">GCS Schools</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=gcs-schools-information&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">GCS Schools Information</a></li>
+                                    <li><a href="reports.php?r=gcs-student-attendance&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">GCS Student Attendance</a></li>
+                                    <li><a href="reports.php?r=gcs-teacher-attendance&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">GCS Teacher Attendance</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Proxy Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=proxy-staff&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Proxy Staff</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">ASC</a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="reports.php?r=furniture&districtCommaSep=mohmand&reports_start_date=2025-26">Furniture</a></li>
+                                            <li><a href="reports.php?r=infrastructure&districtCommaSep=mohmand&reports_start_date=2025-26">Infrastructure</a></li>
+                                <li><a href="reports.php?r=sanctioned-filled-teaching-staff&districtCommaSep=mohmand&reports_start_date=2025-26">Sanctioned & Filled Teaching Staff</a></li>
+                                            <li><a href="reports.php?r=sancioned-filled-non-teaching-staff&districtCommaSep=mohmand&reports_start_date=2025-26">Sanctioned & Filled Non Teaching Staff</a></li>
+                                            <li><a href="reports.php?r=classwise-enrollment&districtCommaSep=mohmand&reports_start_date=2025-26">Class  Wise Enrollment</a></li>
+                                            
+                                            <li><a href="reports.php?r=census-teacherInfo&districtCommaSep=mohmand&reports_start_date=2025-26">Teacher Information</a></li>
+                                            <li><a href="reports.php?r=census-nonteacherInfo&districtCommaSep=mohmand&reports_start_date=2025-26">Non Teacher Information</a></li>
+                                            <li><a href="reports.php?r=census-agewise-enrollment&districtCommaSep=mohmand&reports_start_date=2025-26">Age  Wise Enrollment</a></li>
+                                            <li><a href="reports.php?r=census-disabled-students&districtCommaSep=mohmand&reports_start_date=2025-26">Disabled Students</a></li>
+                                            <li><a href="reports.php?r=census-ptc-info&districtCommaSep=mohmand&reports_start_date=2025-26">PTC Information</a></li>
+                        </ul>
+                    </li>
+                      <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Double Shift</a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="reports.php?r=dss-teachers&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Double Shift Teachers</a></li>
+                                            <li><a href="reports.php?r=dss-nonteachers&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Double Shift NonTeachers</a></li>
+                                <li><a href="reports.php?r=dss-schoolvisits&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Double Shift School Visits</a></li>
+                                            <li><a href="reports.php?r=dss-stdenrollment&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Double Shift Students Enrollment</a></li>
+                                            
+                        </ul>
+                    </li>
+                     <li><a  href="schools-list.php">Flood Affected Schools</a></li>
+                     <li><a href="http://175.107.63.44:81/ftbSA2026/dashboard.php" target="blank">FTB Activity 2026</a></li>
+                                <li><a href="reports.php?r=GetFurnitureComparison&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Furniture Comparison</a></li>
+                                <li><a href="reports.php?r=PTCUnspentAmount&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">PTC Unspent Amount</a></li>
+                                <!--Special Task-->
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Special Task 2026</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="reports.php?r=specialTaskSurvey-done&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Special Task Surveys Done</a></li>
+                                        <li><a href="reports.php?r=specialTaskClassRooms&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Class Rooms Details</a></li>
+                                        <li><a href="reports.php?r=specialTaskEnrollment&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Enrollment</a></li>
+                                        <li><a href="reports.php?r=specialTaskExistingFurniture&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Existing Furniture</a></li>
+                                        <li><a href="reports.php?r=specialTaskNewFurniture&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">New Furniture Provided</a></li>
+                                        <li><a href="reports.php?r=specialTaskNon-Teaching&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Non Teaching Staff</a></li>
+                                        <li><a href="reports.php?r=specialTaskTeaching&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Teaching Staff</a></li>
+                                        <li><a href="reports.php?r=specialTaskPTCFund&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">PTC Fund</a></li>
+                                        <li><a href="reports.php?r=specialTaskSanctionedTeaching&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Sanctioned Posts Teaching</a></li>
+                                        <li><a href="reports.php?r=specialTaskSanctionedNonTeaching&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Sanctioned Posts Non-Teaching</a></li>
+                        </ul>
+                    </li>
+                                <!--Special Task Ends-->
+                            </ul>
+                        </li>
+                    <!--Statistics Reports-->
+                     <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Statistics <span class="caret"></span></a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Schools List</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reports.php?r=regular-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Regular Schools</a></li>
+                                          <li><a href="reports.php?r=dss-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">Double Shift Schools</a></li>
+                                          <li><a href="reports.php?r=gcs-schools&districtCommaSep=mohmand&reports_start_date=10-01-2026 - 10-30-2026">GCS Schools</a></li> 
+                                </ul>
+                    </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Staff</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="statistics-reports.php?r=teaching-staff-list&districtCommaSep=mohmand">Teaching Staff List</a></li>
+                                    <li><a href="statistics-reports.php?r=non-teaching-staff-list&districtCommaSep=mohmand">Non Teaching Staff List</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="statistics-reports.php?r=circles-list&districtCommaSep=mohmand">Circle Offices</a>
+                            </li>
+                            <li><a href="dashboard-graphs.php">Info</a></li>
+                        </ul>
+                     </li>
+                    <!--NMD Reposts End-->
+                                         <li ><a href="cluster-management.php">Admin</a></li>   
+                                          
+                                          <li ><a href="performa.php">Proforma</a></li>
+                      <!--li><a href="http://175.107.63.44:81/ftbSA2024/dashboard.php" target="blank">FTB Activity</a></li-->
+                      <li><a href="trends-graphs.php">DSR<!--span style="position: absolute;top: -15px;right: -21px;"><img src="images/new-icon-gif.gif" style="width: 53px;"></span--></a></li>
+                                  </ul>
+                <ul class="nav navbar-nav navbar-right">
+                                         <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dmo mohmand <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="add-dmo.php?q=MjcwNjY-">Edit Profile</a></li>
+                          <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                                   
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+        <div class="wrapper"><div class="section dashboard-search-form-section">    <div class="container">        <div class="total-and-surveyed"><span class="surveyed-schools">118</span><span class="total-schools"> of 644</span></div>        <div class="search-form">            <form name="dashboard_serch" action="dashboard.php" method="post">                <div class="search-input-col">                    <label>Date</label>                    <input name="dashboard_date" id="dashboardDate" class="datepicker date-monthyear" placeholder="Date" required="required" value="Aug-2026" autocomplete="off"/>                </div>                <div class="search-input-col">                    <label>District</label>                      <select name="district" id="dashboardDistricts" class="populate-tehsils districts">                                  <option value="mohmand" selected="selected">MOHMAND</option>                              </select>                </div>                   <div class="search-input-col">                       <label>Tehsil</label>                      <select name="thesil" id="dashboardThesil"  class="populate-ucs tehsils">                           <option value="">All</option>                      </select>                </div>                <div class="search-input-col">                    <label>UC</label>                      <select name="ucs" id="dashboardUcs"  class="ucs">                           <option value="">All</option>                      </select>                </div>                <div class="search-input-col">                    <label>Gender</label>                      <select name="gender" id="dashboardGender">                           <option value="Boys" >Boys</option>                            <option value="Girls" >Girls</option>                             <option value=""  selected="selected">Both</option>                      </select>                </div>                <div class="search-input-col">                    <label>Level</label>                     <select name="school_level" id="dashboardLevel">                             <option value=""  selected="selected">All</option>                           <option value="Mosque" >Mosque</option>                            <option value="Primary" >Primary School</option>                             <option value="Middle" >Middle School</option>                            <option value="High" >High School</option>                            <option value="Higher Secondary" >Higher Secondary School</option>                      </select>                </div>                <div class="search-input-col search-submit-form-area"><input type="submit" name="SearchDistrict" value="Search"  class="btn btn-primary green search-button"></div>            </form>     </div>    </div><!-- /.container-fluid --></div><div class="section dashboard-graphs-section">
+    <!--div class="container"-->
+    <div class="col-sm-12">
+        <div class="col-sm-3 bg-white">
+            <div id="total-surveys">
+                <!--Module Title-->
+                <h2>Total Surveys</h2>
+                <div class="module-container">
+                    <!--DIV For Graph-->
+                    <div class="front-content" style="display: block;">
+
+                        <div class="graph" style="margin: 0px;">
+                            <div style="margin: auto;width: 230px">
+                                <div id="totalSurveysDonePercentDiv" style="display: none;color: #164936;width: 220px;position: absolute;padding-top: 80px;text-align: center">
+                                    <div style="height: 35px;">
+                                        <span style="font-size: 40px">0</span>
+                                        <span style="font-size: 28px">%</span>
+                                    </div>
+                                    <span style="font-size: 14px">surveys</span>
+                                </div>
+                                <div id="totalSurveys" class="am-chart" style="width: 215px;height: 215px;"></div>
+                            </div>
+                        </div>
+                        <div id="totalSurveys_chart1" class="bar-chart">
+                            <ul>
+                                <li class="survey-boys">
+                                    <i class="fa fa-male"></i> Boys
+                                </li>
+                                <li class="survey-girls">
+                                    <i class="fa fa-male"></i> Girls
+                                </li>
+                            </ul>
+                            <div class="graph">
+                                <div class="bar-boy"></div>
+                                <div class="bar-girl"></div>
+                            </div>
+                            <ul>
+                                <li class="survey-urban">Urban</li>
+                                <li class="survey-rural">Rural</li>
+                            </ul>
+                            <div class="graph">
+                                <div class="bar-urban"></div>
+                                <div class="bar-rural"></div>
+                            </div>
+                        </div>
+                        <div class="graph">
+                            <div id="total-surveys-2" class="am-chart" style="width: 260px; height: 125px;" ></div>
+                        </div>
+
+                    </div>
+                    <!--DIV For Graph Data-->
+                    <div class="back-content" style="display: none;">
+                        <p>Graph Data</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 no-padding">
+            <div class="col-sm-12 no-padding space-bellow">
+                <div class="col-sm-3  bg-white">
+                    <div id="school-status">
+                        <div id="more" class="btn-next btn-more" style="display: none;">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Schools Status</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph" style="margin-top:0px">
+                                    <div id="schoolStatus" class="am-chart" style="width: 215px;height: 215px;"></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-3  bg-white">
+                    <div id="teachers">
+
+                        <div class="module-container">
+                            <h2>Teachers</h2>
+                            <div class="front-content  graph-section">
+                                <div class="graph-val"></div>
+                                <div class="clear"></div>
+                                <div class="graph">
+                                    <div id="teacherPresence" class="am-chart" style="width: 100px;height: 180px;" ></div>
+                                </div>
+                                <ul style="display: none;">
+                                    <li><span class="sanction"></span>Sanction</li>
+                                    <li><span class="un-auth"></span>Un-auth</li>
+                                    <li><span class="other-duty"></span>Other Duty</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="non-teachers">
+                        <div class="module-container">
+                            <h2>Non Teachers</h2>
+                            <div class="front-content  graph-section">
+                                <div class="graph-val"></div>
+                                <div class="clear"></div>
+                                <div class="graph">
+                                    <div id="teacher-presence-2_chart" class="am-chart" style="width: 100px;height: 180px;" ></div>
+                                </div>
+                                <ul style="display: none;">
+                                    <li ><span class="sanction"></span>Sanction</li>
+                                    <li ><span class="un-auth"></span>Un-auth</li>
+                                    <li ><span class="other-duty"></span>Other Duty</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4  bg-white">
+                    <div id="availability">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Facilities</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;width: 100%;">
+                                <div id="funtionalityStatus-spider" style="width: 300px;height: 245px" ></div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;width: 100%;">
+                                <div id="funtionalityStatus" class="high-chart" style="width: 300px;height: 245px"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2  bg-white">
+                    <div id="school-occupied">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Schools Occupied</h2>
+                        <div class="module-container" style="width: 120px;height: 205px;">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;width: 100px;">
+                                <div class="front-content graph-section" style="display: block;width: 80px;">
+                                    <div class="graph-val" style="font-size: 45px;"></div>
+                                    <div class="clear"></div>
+                                    <div class="occupied-container">
+                                        <div class="occupied-whole occupied-box">
+                                            <span>0</span>
+                                        </div>
+                                        <div class="occupied-text" style="margin-bottom: 5px;">
+                                            <span>Whole</span>														
+                                        </div>
+                                        <div class="occupied-partial occupied-box" >
+                                            <span>0</span>
+                                        </div>
+                                        <div class="occupied-text">
+                                            <span>Partial</span>														
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;width: 100px;">
+                                <div class="front-content graph-section" style="display: block;width: 80px;">
+                                    <div class="graph-val" style="font-size: 45px;"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 no-padding">
+
+                <div class="col-sm-3  bg-white">
+                    <div id="school-visit">
+                        <div id="more" class="btn-next btn-more" style="display: none;">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>School Visits</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val"></div>
+                                <div class="clear"></div>
+                                <div id="schoolVisits" class="am-chart" style="height: 170px;margin-top: 65px" ></div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 bg-white">
+                    <div id="students">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Students</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val"></div>
+                                <div class="clear"></div>
+                                <div class="graph" style="margin-top:85px;">
+                                    <div id="studentPresence" class="am-chart" style="height: 150px;" ></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <div id="student-presence-2" class="am-chart" style="width:230px;height: 230px;"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-3 bg-white">
+                    <div id="vacantTeachersandSingleTeacherSchools">
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <!--Module Title-->
+                        <h2>Vacant Teaching Posts</h2>
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph-val" style="font-size: 38px;"></div>
+                                <div class="clear"></div>
+                                <div class="graph" style="margin-top:45px;">
+                                    <div id="convacantTeachers" class="am-chart" style="height: 190px;" ></div>
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <div id="singleteacherSchools" class="am-chart" style="width:230px;height: 230px;"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--div class="col-sm-3 bg-white">
+                    <div id="school-without">
+
+                        <h2>Schools Without</h2>
+
+                        <div class="module-container">
+                            <div class="front-content graph-section" style="display: block;">
+                                <div class="graph" style="margin-top: 0px;">
+                                    <div id="miscSchoolInfo" class="am-chart" style="height: 190px" ></div>
+                                </div>
+                                <ul>
+                                    <li>
+                                       <i class="fa fa-book"></i>
+                                        Textbook
+                                    </li>
+                                    <li>
+                                       <i class="fa fa-money"></i>
+                                        Stipend
+                                    </li>
+                                    <li>
+                                     <i class="fa fa-graduation-cap"></i>
+                                        TeacherGuide
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="back-content graph-section" style="display: none;">
+                                <p>Graph Data</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div-->
+                <div class="col-sm-3 bg-white">
+                    <div id="top-districts">
+                        <!--Module Title-->
+                        <div id="more" class="btn-next btn-more">
+                            <span class="fa fa-arrow-right arrow"></span>
+                        </div>
+                        <h2><i class="fa fa-ellipsis-v"></i>Top 5 Districts</h2>
+
+                        <div class="module-container">
+                            <!--DIV For Graph-->
+                            <div class="front-content graph-section" style="display: block;">
+                                <ul>
+                                    <li class="color-1 bourder"></li>
+                                    <li class="color-2 bourder"></li>
+                                    <li class="color-3 bourder"></li>
+                                    <li class="color-4 bourder"></li>
+                                    <li class="color-5 bourder"></li>
+                                </ul>
+                                <div class="btn">
+                                    <div id="surveys_button" class="pressed bourder">Surveys</div>
+                                    <div id="teachers_button" class="unpressed bourder">Teachers</div>
+                                    <div id="students_button" class="unpressed bourder">Students</div>
+
+                                </div>
+                            </div>
+                            <!--DIV For Graph Data-->
+                            <div class="back-content graph-section" style="display: none;">
+                                <ul>
+                                    <li class="color-5 bourder"></li>
+                                    <li class="color-4 bourder"></li>
+                                    <li class="color-3 bourder"></li>
+                                    <li class="color-2 bourder"></li>
+                                    <li class="color-1 bourder"></li>
+                                </ul>
+                                <div class="btn">
+                                    <div id="surveys_button_bottom" class="pressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Surveys</div>
+                                    <div id="teachers_button_bottom" class="unpressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Teachers</div>
+                                    <div id="students_button_bottom" class="unpressed bourder" style="width: 60px;margin-left: 2px;font-size: 12px;">Students</div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end of row 2-->
+        </div>
+    </div>
+    <!--/div-->
+</div>
+<div class="footer-section-wrapper section">    <div class="footer">        <div class="container">            <div class="footer-inner">                <img src="images/logo.svg" alt="KPEMA" style="max-width:50px;">                <p>&copy; 2014-2026 Khyber Pakhtunkhwa Education Monitoring Authority (KPEMA)</p>            </div>        </div>    </div></div><!-- Modal --><div id="logout-modal" class="modal fade" role="dialog">    <div class="modal-dialog">        <!-- Modal content-->        <div class="modal-content">            <div class="modal-header">                <button type="button" class="close" data-dismiss="modal">&times;</button>                <h4 class="modal-title" style="color:red;">Please logout before Leaving</h4>            </div>            <div class="modal-body">                <p>We Detect That you didn't use the dashboard for some time OR you are closing the dashboard tab, therefor we recommend that you logout by clicking the bellow button.</p>                <a href="logout.php" class="btn btn-primary btn-login">Click To Logout</a>            </div>        </div>    </div></div><!--Modal Ends--></div><!--Wrapper Ends--><script>var isSettled=$("#isSettled").val();</script><script src="js/provincedata-script-new.js"></script><script src="js/bootstrap.min.js"></script><script>$(".toggle-dmo-password").click(function() {  $(this).toggleClass("fa-eye fa-eye-slash");  var input = $($(this).attr("toggle"));  if (input.attr("type") == "password") {    input.attr("type", "text");  } else {    input.attr("type", "password");  }});</script><!--Do not load this script on add-monitor page because the copy & past buttons not working in mobile--><script>/*Disable inspect Browser*/    window.onload = function () {     document.addEventListener("contextmenu", function (e) {     e.preventDefault();     }, false);     document.addEventListener("keydown", function (e) {     //document.onkeydown = function(e) {     // "I" key     if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {     disabledEvent(e);     }     // "J" key     if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {     disabledEvent(e);     }     // "S" key + macOS     if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {     disabledEvent(e);     }     // "U" key     if (e.ctrlKey && e.keyCode == 85) {     disabledEvent(e);     }     // "F12" key     if (e.keyCode == 123) {     disabledEvent(e);     }     }, false);     function disabledEvent(e) {     if (e.stopPropagation) {     e.stopPropagation();     } else if (window.event) {     window.event.cancelBubble = true;     }     e.preventDefault();     return false;     }     }</script><!--Load Scripts for ASC Performa and Map page-->    <script src="js/schooldata-script.js"></script><script src = "js/script.js" ></script><!--Charts scripts-->    <script type="text/javascript" src="vendors/amcharts/amcharts.js"></script>    <script type="text/javascript" src="vendors/amcharts/pie.js"></script>    <script type="text/javascript" src="vendors/amcharts/funnel.js"></script>    <script type="text/javascript" src="vendors/amcharts/serial.js"></script>    <script type="text/javascript" src="vendors/highcharts/highcharts.js"></script>    <script type="text/javascript" src="vendors/highcharts/highcharts-more.js"></script><!--Dashboard Scripts-->    <script>        /********************************************************************variable declaration and initializations***************************/        var surveydata ={"result":1,"totalsurveysdone":"118","schoolscount":"644","totalsurveypercentage":18.32298136645963,"totalboys":"73","totalgirls":"45","mosquecount":null,"primarycount":null,"middlecount":"73","highcount":"41","highseccount":"4","rural":"107","urban":"11","totalboyspercent":61.86440677966102,"totalgirlspercent":38.13559322033898,"mosquecountpercent":0,"primarycountpercent":0,"middlecountpercent":61.86440677966102,"highcountpercent":34.74576271186441,"highseccountpercent":3.389830508474576,"ruralpercent":90.67796610169492,"urbanpercent":9.322033898305085,"monthNumber":"08"};        var schoolStatusData ={"result":1,"totalschools":"118","openschools":"107","closedschools":"11","studentstaffabsent":"10","nonfunctionalschool":null,"openschoolspercentage":90.67796610169492,"closedschoolspercentage":9.322033898305085};        var TeacherPresenceData ={"result":1,"totalteachers":871,"absent":115,"percentage":13.157894736842104,"sanctionedleave":"62","unauthorizedabent":"45","latecomer":"3","onduty":"32","proxyteachers":0,"sancleavepercentage":44.60431654676259,"unauthorizedleavepercentage":32.37410071942446,"latecomerpercentage":2.158273381294964,"ondutypercentage":23.021582733812952,"proxypercentage":"","absentruralpercentage":90.43478260869566,"absenturbanpercentage":9.565217391304348,"absentmalepercentage":60,"absentfemalepercentage":40};        var non_teacherPresence ={"result":1,"totalteachers":424,"absent":147,"percentage":34.66981132075472,"sanctionedleave":"19","unauthorizedabent":"120","latecomer":"7","onduty":"20","proxyteachers":0,"sancleavepercentage":11.949685534591195,"unauthorizedleavepercentage":75.47169811320755,"ondutypercentage":12.578616352201259,"absentruralpercentage":89.79591836734694,"absenturbanpercentage":10.204081632653061,"absentmalepercentage":78.2312925170068,"absentfemalepercentage":21.768707482993197};        var facilities ={"result":1,"totalschoolcount":"111","totalelectricityavailable":"84","totalelectricityfunctional":"62","totalwateravailable":"102","totalwaterfunctional":"97","totaltoiletavailable":"110","totaltoiletfunctional":"89","boundarywallavailable":"109","boundarywallfunctional":"98","buildingavailable":"108","playgroundavailable":"111","totalelectricityavailablepercentage":75.67567567567568,"totalelectricityfunctionalpercentage":55.85585585585585,"totalwateravailablepercentage":91.8918918918919,"totalwaterfunctionalpercentage":87.38738738738738,"totaltoiletavailablepercentage":99.09909909909909,"totaltoiletfunctionalpercentage":80.18018018018019,"boundarywallavailablepercentage":98.1981981981982,"boundarywallfunctionalpercentage":88.28828828828829,"buildingavailablepercentage":97.2972972972973,"playgroundavailablepercentage":100,"totalfacilitiespercentage":91.21621621621622};        var school_occupancy ={"result":1,"totalvisits":"2","totalschoolvisited":"1","totalschoolsurveyed":"118","totalADOVisits":"0","totalSDOVisits":"0","totalDOVisits":"1","totalschoolvisitedpercentage":0.847457627118644,"totalurbanvisitedpercentage":200,"totalruralvisitedpercentage":0,"totalprimaryvisitedpercentage":0,"totalmosquevisitedpercentage":0,"totalmiddlevisitedpercentage":0,"totalhighvisitedpercentage":200,"totalhighsecondaryvisitedpercentage":0};        var students_attendance ={"result":1,"totalschools":"111","totalstudents":"13066","totalabsentstudents":5637,"totalabsentstudentspercent":43.14250727077912,"totalgirlsabsent":"824","totalboysabsent":"4813","totalgirlsabsentpercent":14.617704452723078,"totalboysabsentpercent":85.38229554727693,"mosqueabsent":null,"primaryabsent":null,"middleabsent":"1551","highabsent":"3634","highsecondaryabsent":"452","mosqueabsentpercent":0,"primaryabsentpercent":0,"middleabsentpercent":27.51463544438531,"highabsentpercent":64.4669150257229,"highsecondaryabsentpercent":8.018449529891786,"totalabsentstudentsurbanpercentage":14.202015467541598,"totalabsentstudentruralpercentage":85.7979845324584,"totalurbanabsent":"606","totalruralabsent":"3661"};        var villegalBuildingStatus ={"result":1,"totalschoolcount":null,"totalillegaloccupied":null,"totalpercentage":0,"whole":null,"part":null,"wholepercent":0,"partpercent":0,"teachersbyotherngo":"1"};        var school_without ={"withoutfreetextbookpercentage":0,"withoutstipendpercentage":0,"withoutteacherguidepercentage":0,"result":1};        var TopDistricts ={"result":1,"topStudentsArray":[{"districtname":"SAFI","percentage":"63.2"},{"districtname":"EKKA GHUND","percentage":"48.4"},{"districtname":"KHWEZAI","percentage":"39.9"},{"districtname":"PANDIALI","percentage":"37.9"},{"districtname":"AMBAR","percentage":"37.7"}],"topSurveysArray":[{"districtname":"HALIMZAI","percentage":"23.9"},{"districtname":"EKKA GHUND","percentage":"23.5"},{"districtname":"SAFI","percentage":"17.1"},{"districtname":"AMBAR","percentage":"16.1"},{"districtname":"PRANG GHAR","percentage":"15.8"}],"topTeachersArray":[{"districtname":"KHWEZAI","percentage":"20.6"},{"districtname":"HALIMZAI","percentage":"16.4"},{"districtname":"AMBAR","percentage":"13.8"},{"districtname":"SAFI","percentage":"13.2"},{"districtname":"EKKA GHUND","percentage":"11.8"}],"bottomStudentsArray":[{"districtname":"PRANG GHAR","percentage":"21.0"},{"districtname":"HALIMZAI","percentage":"37.0"},{"districtname":"AMBAR","percentage":"37.7"},{"districtname":"PANDIALI","percentage":"37.9"},{"districtname":"KHWEZAI","percentage":"39.9"}],"bottomSurveysArray":[{"districtname":"KHWEZAI","percentage":"8.7"},{"districtname":"PANDIALI","percentage":"15.6"},{"districtname":"PRANG GHAR","percentage":"15.8"},{"districtname":"AMBAR","percentage":"16.1"},{"districtname":"SAFI","percentage":"17.1"}],"bottomTeachersArray":[{"districtname":"PRANG GHAR","percentage":"7.8"},{"districtname":"PANDIALI","percentage":"9.1"},{"districtname":"EKKA GHUND","percentage":"11.8"},{"districtname":"SAFI","percentage":"13.2"},{"districtname":"AMBAR","percentage":"13.8"}],"district":"mohmand","tehsil":null,"ucs":null};        var selected_district ='mohmand';        var selectedDate ='Aug-2026';        var selectedTehsil ='';        var selectedUc ='';        var vacantTeachers={"result":1,"Primary":null,"Middle":null,"High":null,"Higher_Secondary":null,"total":"0"};        var singleTeacherSchools={"result":1,"Total_Schools":"118","Single_Teacher_Schools":"2"};        //console.log(vacantTeachers);        populate_tehsiles(selected_district, selectedDate, selectedTehsil,isSettled);        populate_ucs(selected_district, selectedTehsil, selectedUc, selectedDate);</script>    <script type="text/javascript" src="js/dashboard-scripts.js"></script><!--variables are declared above for these scripts,therefor do not change it's location-->            <!--Charts scripts--></body></html>
